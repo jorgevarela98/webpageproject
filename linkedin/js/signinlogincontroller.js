@@ -60,7 +60,7 @@ function userRegister(){
             return true;
         }
     }
-/*
+
 function loginfields(name){
     document.getElementById('loginform').innerHTML='';
     if(userRegister()==true){
@@ -105,5 +105,5 @@ function loginfields(name){
         `;
         
     }
-}*/
+}
 userRegister();
