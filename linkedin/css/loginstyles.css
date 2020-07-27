@@ -1,0 +1,41 @@
+.loginlogo-dimension{
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+.inputlogin{
+    outline: none !important;
+    outline-color: #00000000 !important;
+    transition: 0.2s ease-in-out !important;
+}
+.inputlogin:focus{
+    outline: 1px solid !important;
+    outline-color: #0073b0 !important;
+}
+
+.logininput-dimension{
+    width: 320px;
+    height: 40px;
+}
+.loginbtn-style{
+    width: 320px;
+    outline: none !important;
+    background-color: #0073b0 !important;
+    height: 45px;
+    color: #ffffffff;
+    border-radius: 7px;
+}
+.loginbtn-style:hover{
+    background-color: #006097 !important;
+}
+
+.lostpass-btn{
+    text-decoration: none !important;
+    color: #0073b0 ;
+    transition: 0.1s ease-in-out;
+}
+.lostpass-btn:hover{
+    background-color: #E5F5FC;
+    padding: 5px;
+    border-radius: 2px;
+}

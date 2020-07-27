@@ -1,0 +1,117 @@
+ul{
+    list-style-type: none;
+}
+p{
+    margin-bottom: 0rem !important;
+}
+.navbtns-dimensions{
+    height: 38px;
+}
+.jobsbtn{
+    border-right: solid 1px;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    color: #5E6060 !important;
+    border-radius: 0 !important;
+    background-color: #EBEFF1 !important;
+}
+.searchbtn-inputs{
+    outline: none !important;
+}
+.searchinputs{
+    outline-color: #00000000 !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none;
+    border-right: solid 1px;
+    border-radius: 0;
+    transition: 0.15ms ease-in;
+    border-color: #5E6060;
+    background-color:#EBEFF1 !important ;
+}
+.searchinputs:focus{
+    outline-color: #0073b0 !important;
+}
+
+.searchbtn{
+    outline-color: #85858500;
+    border: none !important;
+    color: #5E6060 !important;
+    border-radius: 0 !important;
+    background-color: #EBEFF1 !important;
+}
+.searchbtn:focus{
+    outline-color:#009aec ;
+}
+.dropdownbtn{
+    background-color: #2867B2 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    width: auto !important;
+    border: none !important;
+    border-radius: 20px !important;
+    transition: 0.9ms ease-in-out;
+}
+.dropdownbtn:hover{
+    color: #ffffff !important;
+    background: #006097 !important;
+}
+
+.dropdownbt-gray{
+    background-color: #EBEFF1 !important;
+    color: #5E6060 !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    width: auto !important;
+    border: none !important;
+    border-radius: 20px !important;
+    transition: 0.9ms ease-in-out;
+}
+.dropdownbt-gray:hover{
+    background-color: #CDCFD2 !important;
+}
+
+.navdesign{
+    background-color: #ffffffff !important;
+    border-bottom: #5e606044  1px solid !important;
+}
+.listdesign{
+    
+    border-radius: 0 !important;
+    border-left: 0 !important;
+}
+
+.listitem-design{
+    cursor: pointer;
+    background-color: #00000000 !important;
+}
+
+.listitem-design:hover{
+    background-color: #5e606033 !important;
+}
+
+.listitem-design:focus{
+    background-color: #0099ece1 !important;
+}
+
+.section-design{
+    display: flex !important;
+}
+
+.jobcard-info{
+    width: 70px !important;
+}
+
+.btn-solicitar{
+    padding: 8px;
+    background: #2967B2;
+    border-radius: 4px;
+    color: #ffffffff;
+    outline: none !important;
+}
+
+.section-scroll{
+    overflow-y: scroll !important;
+}

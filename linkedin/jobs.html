@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f0f4eaef4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/jobs.css">
+    <link rel="stylesheet" href="css/indexStyles.css">
+    <title>Empleos</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light navdesign" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2">
+                    <a href="index.html" class="navbar-brand"><img src="assets/svgfiles/jobslogo.svg" alt="linkedin.svg" style="width: 150px;"></a>
+                </div>
+                <section >
+                    <div class="btn-group col-xl-6" style="margin-left: 20px;">
+                        <button  class="btn jobsbtn dropdown-toggle " data-toggle="dropdown" data-display="static">
+                        Empleos
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg-left">
+                            <ul style="padding-left: 0; text-align: center;">
+                                
+                                <h6 class="dropdown-header">BUSCAR</h6>
+                                <li class="dropdown-item">
+                                    <a href="">Empleos</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="">Personas</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="">Formación</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <section style="display: flex;">
+                            <input class="searchinputs" type="search" style="width: 230px;" placeholder="Buscar cargos o empresas">
+                            <input class="searchinputs" type="search" style="width: 230px;" placeholder="Ubicacón" >
+                            <button class="searchbtn"><i class="fas fa-search"></i></button>
+                        </section>
+                    </div>
+                </section>
+                <section class="ml-5">
+                    <a href="signin.html" class="font-color btn-color ml-2" style="border: 0; height: 35px; width: 100px; padding: 6px;">Unirse ahora</a>
+                    <a href="login.html" class="btn btn-outline-primary ml-2" style="align-items: center; height: 35px; width: 115px;" >Inicia sesión</a>
+                </section>
+                <section>
+                    <div class="col-xl-2" style="display: flex;">
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbtn dropdown-toggle" href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Más relevantes
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id="" ><p>Más relevantes</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Más recientes</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbtn dropdown-toggle" style="width: 164px !important;" href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cualquier momento
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id="" ><p>Últimas 24 horas</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Semana Pasada</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Mes pasado</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Cualquier momento</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbtn dropdown-toggle"  href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            15km
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id="" ><p>Últimas 24 horas</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Semana Pasada</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Mes pasado</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="radio" name="" id=""><p>Cualquier momento</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbt-gray dropdown-toggle"  href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Empresa
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <input type="text" placeholder="Añadir un filtro">
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id="" ><p>Últimas 24 horas</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id=""><p>Semana Pasada</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbt-gray dropdown-toggle"  href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ubicación
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <input type="text" placeholder="Añadir un filtro">
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id="" ><p>Últimas 24 horas</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id=""><p>Semana Pasada</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown mr-2">
+                            <a class="btn dropdownbt-gray dropdown-toggle"  href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tipo de Empleo
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id="" ><p>Jornada completa</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id=""><p>Contrato por obra</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn dropdownbt-gray dropdown-toggle"  href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Más filtros
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id="" ><p>Jornada completa</p>
+                                </div>
+                                <div style="display: inline-flex;">
+                                    <input class="dropdown-item" type="checkbox" name="" id=""><p>Contrato por obra</p>
+                                </div>
+                                <button>Listo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Todos estos filtros serán generados Dinamicamente***** -->
+                </section>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row">
+                <section class="section-design">
+                    <div class="col-xl-6" style="width: 562px;">
+                        <ul class="list-group" style="width: 512px; ">
+                            <li class="list-group-item listdesign" >
+                                <p class="p-design">Resultados</p>
+                            </li>
+                            <li class="list-group-item listitem-design listdesign">
+                                <div class="row no-gutters" style="max-width: 540px;">
+                                    <div class="col-xl-2">
+                                        <img src="assets/img/1.jpg" class="card-img" alt=" image.jpg" style="width: 70px;">
+                                    </div>
+                                    <div class="col-xl-7">
+                                        <div class="card-body" style="padding: 0rem !important;">
+                                            <a href="" >JR. Account Manager</a>
+                                            <a class="card-text">Huawei Latinoamérica</a>
+                                            <p>Tegucigalpa,Francisco Morazan, Honduras</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-6 mt-5">
+                        <div>
+                            <section class="section-scroll">
+                                <div class="card" >
+                                    <img src="assets/img/1.jpg" class="card-img-top jobcard-info" alt="...">
+                                    <div class="card-body">
+                                    <h5 class="card-title">JR. Account Manager</h5>
+                                    <p class="card-text">Huawei Latinoamérica - Tegucigalpa, Francisco Morazán, Honduras</p>
+                                    <p class="card-text"><small class="text-muted">Hace 4 días - Más de 200 solicitantes</small></p>
+                                    <p>
+                                        <a style="color: #2867B2 !important" href="login.html">Descubre a quién ha contratado Huawei Latinoamérica para este puesto</a>
+                                    </p>
+                                    <button class="mt-3 btn-solicitar">Solicitar ahora</button>
+                                    </div>
+                                </div>
+                                <div >
+                                    <p>Mensaje directo del anunciante</p>
+                                    <section>
+                                        <div class="mb-3" style="max-width: 540px;">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                <img src="..." class="card-img" alt="...">
+                                                </div>
+                                                <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                    </section>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/test.js"></script>
+</body>
+</html>

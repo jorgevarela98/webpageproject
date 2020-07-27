@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >LinkedIn</title>
+    <link rel="stylesheet" href="css/indexStyles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f0f4eaef4c.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: rgb(255, 255,255);">
+    <div id="menu-busqueda" class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="flexMenu mt-3" style="display: flex;">
+                    <a href="index.html" >
+                        <img  style="width: 190px; padding-top: 12px; margin-left: 16px;"  src="assets/svgfiles/logotest2svg.svg" alt="LinkledIn.svg">
+                    </a>
+                    <section id="section-margin" style="margin-left: auto;">
+                        <a href="signin.html" class="font-color btn-color" style="border: 0; height: 35px; width: 100px; padding: 6px;">Unirse ahora</a>
+                        <a href="login.html" class="btn btn-outline-primary ml-2" style="align-items: center; height: 35px; width: 115px;" >Inicia sesión</a>
+                    </section>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="pt-5">
+                        <section>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-5">
+                                        <div style="color: #2977c9;">
+                                            <h1 style="font-size: 3rem;">
+                                                ¡Te damos la bienvenida a tu comunidad profesional!
+                                            </h1>
+                                        </div>
+                                        <div style="margin-top: 70px;" >
+                                            <div>
+                                                <ul style="list-style: none;">
+                                                    <li >
+                                                        <a href="jobs.html" class="opc-btn-design" style="outline-width : 0;">Busca un Empleo <img style="margin-left: 150px;" src="assets/svgfiles/chevronicon.svg" alt="chevronicon.svg"> </a>
+                                                    </li>
+                                                    <li style="margin-top: 30px;">
+                                                        <a href="" class="opc-btn-design " style="outline-width : 0;">Encuentra a personas que conoces<img style="margin-left: 32px;" src="assets/svgfiles/chevronicon.svg" alt="chevronicon.svg"></a>
+                                                    </li>
+                                                    <li style="margin-top: 30px;">
+                                                        <a href="" class="opc-btn-design " style="outline-width : 0;">Aprende una nueva aptitud <img style="margin-left: 79px;" src="assets/svgfiles/chevronicon.svg" alt="chevronicon.svg"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-xl-7">
+                                    <img src="assets/svgfiles/img001.svg" alt="img001.svg">
+                                </div>
+                                </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section  style="background-color: #faf9f7; padding-bottom: 70px">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 id="sect2-h1">
+                            Encuentra empleos y prácticas
+                        </h1>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Busquedas Sugeridas</h3>
+                        <div id="suggested-searches">
+                        
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <section style="background-color: #f1ece5; padding: 80px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 style="color: #b24020;">
+                            Anuncia tu empleo y encuentra a los profesionales que necesitas
+                        </h1>  
+                    </div>
+                    <div class="col-6">
+                        
+                        <a class="announce-btn btn-design" style="outline-width : 0;text-align: center; line-height: 50px;" >Anunciar un empleo</a>
+                    </div>
+                </div>
+            </div> 
+        </section> 
+        <section>
+            <div class="container">
+                <div class="row" style="margin-top: 70px;">
+                    <div class="col-6">
+                        <img src="assets/svgfiles/img002.svg" alt="interaccion.svg">
+                    </div>
+                    <div class="col-6">
+                        <img src="assets/svgfiles/img003.svg" alt="sittingondesk.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-top: 50px;">
+                <div class="row">
+                    <div class="col-6">
+                        <h1 class="container-h1">
+                            Conecta con usuarios que te pueden ayudar
+                        </h1>
+                    </div>
+                    <div class="col-6">
+                        <h1 class="container-h1">
+                            Aprende las aptitudes que más pueden ayudarte ahora
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" style="margin-top: -31px;">
+                        <a class=" btn-find btn-design" style="  outline-width : 0;text-align: center; line-height: 50px;" >Encuentra personas que conoces</a>
+                    </div>
+                    <div class="col-6">
+                        <div class="btn-group">
+                            <button type="button"  data-display="static"  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="outline-width : 0;">
+                                Elige un tema para aprender
+                            </button>
+                            <div class="dropdown-menu" style="width: 100%;" id="chooseMenuDropdown">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="back-img" class="mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col mt-5">
+                        <h1 style="margin-top : 200px;">
+                            Súmate a tus compañeros y amigos en LinkedIn
+                        </h1>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <a href="" style="outline-width : 0;" class="boton-empezar">Comenzar</a>
+                </div>
+            </div>
+        </section>
+        <section class="mb-5"style="background-color: #FAF9F7;">
+            <div class="container" >
+                <div class="row">
+                    <div class="col-xl-2"><i><img src="assets/svgfiles/logotest2svg.svg" style="width: 130px;" alt=""></i></div>
+                    <div class="col-xl-2">
+                        <ul>
+                            <p>General</p>
+                            <li>
+                                <a href="" class="directorybtns">Regístrate</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Centro de Ayúda</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Acerca de</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Prensa (inglés)</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Blog</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Empleos</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Desarrolladores</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3">
+                        <ul>
+                            <p>Navegar por LinkedIn</p>
+                            <li>
+                                <a href="" class="directorybtns">Learning</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Empleos</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Salary</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Móvil</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">ProFinder</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3">
+                        <ul>
+                            <p>Business Solutions</p>
+                            <li>
+                                <a href="" class="directorybtns">Talent</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Sales</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Learning</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2">
+                        <ul>
+                            <p>Directorios</p>
+                            <li>
+                                <a href="" class="directorybtns">Miembros</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Empleos</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Empresas</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Sueldos</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Destacado</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Learning</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Publicaciones</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Artículos</a>
+                            </li>
+                            <li>
+                                <a href="" class="directorybtns">Universidades</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+    <script src="js/indexcontroller.js"></script>
+    <script src="js/signinlogincontroller.js"></script>
+</body>
+<footer>
+<p>xadasdasdsa</p>
+</footer>
+</html>

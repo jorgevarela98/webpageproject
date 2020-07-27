@@ -1,0 +1,63 @@
+/*@font-face{
+    font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif ;
+}*/
+body{
+    font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif ;
+}
+.singinBackground{
+    background-image: url("../assets/svgfiles/SignInBackground.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    
+}
+
+.textalign{
+    text-align: left;
+}
+
+.inputdimension{
+    width: 100%;
+}
+
+.inputsoutlines{
+    outline: none !important;
+    outline-color: #00000000 !important;
+    transition: 0.2s ease-in-out !important;
+}
+.inputsoutlines:focus{
+    outline: 1px solid !important;
+    outline-color: #0073b0 !important;
+}
+
+.btns-style{
+    outline: none !important;
+    background-color: #0073b0 !important;
+    height: 45px;
+    color: #ffffffff;
+    border-radius: 7px;
+}
+.btns-style:hover{
+    background-color: #006097 !important;
+}
+.fb-btn-style{
+    outline: none !important;
+    background-color: #425597 !important;
+    border-radius: 7px;
+    color: #ffffffff;
+    height: 45px;
+}
+.fb-btn-style:hover{
+    background-color: #3F5190 !important;
+}
+.input-err{
+    border: 1px solid #ff0000;
+}
+.input-success{
+    border: 1px solid #00ff00;
+}
+.showdisplay{
+    display: block !important;
+}
+.hidedisplay{
+    display: none !important;
+}
