@@ -86,3 +86,18 @@
     padding-top: 0 !important;
     padding-left: 7px !important;
 }
+.flexes-cards{
+    display: flex;
+}
+.follow-btn{
+    padding: 2px;
+    text-decoration: none !important;
+    border: 1px solid;
+    color: #1073c9c4;
+    transition: 0.2s ease-in-out;
+}
+.follow-btn:hover{
+    border: 1px solid;
+    color: #0e4b81;
+    background-color: #E5F5FC !important;
+}
