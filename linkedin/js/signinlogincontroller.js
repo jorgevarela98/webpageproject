@@ -9,15 +9,30 @@ if(localStorage.getItem('usuarios') == null){
 }
 */
 
-function userRegister(){
+function signInGenerator(){
+    userRegister();
+    userInformation();
+}
+signInGenerator();
+    function userRegister(){
+        
+        document.getElementById('cardbody').getElementsBy
+        if(validateField('email', 'password') == true){
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            console.log(email,password);
+            console.log(document.getElementById('password').value.length);
+            document.getElementById('cardbody').classList.add('hidedisplay');
+            document.getElementById('cardbody2').classList.remove('hidedisplay');
+        }else{
+            if(validateField('email', 'password') == false){
+                console.log('Error');
+            }
+        }
+        
+    }
 
-    if(validateField('email', 'password') == true){
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        console.log(email,password);
-        console.log(document.getElementById('password').value.length);
-        document.getElementById('cardbody').classList.add('hidedisplay');
-        document.getElementById('cardbody2').classList.remove('hidedisplay');
+    function userInformation(){
         document.getElementById('cardbody2').classList.add('showdisplay');
         if(uservalidateField('name', 'apellidos') == true){
             var names = document.getElementById('name').value;
@@ -26,22 +41,15 @@ function userRegister(){
             loginfields(names);
             return true;
         }
-        
-    }else{
-        if(validateField('email', 'password') == false){
-            console.log('Error');
-        }
     }
-    
-}
-userRegister();
+
     function validateField(idEmail,idPassword){
         if(document.getElementById(idEmail).value == '' || document.getElementById(idPassword).value == '' || (document.getElementById('password').value.length<6)){
             document.getElementById(idEmail).classList.add('input-err');
             document.getElementById(idEmail).classList.remove('input-success');
             document.getElementById(idPassword).classList.add('input-err');
             document.getElementById(idPassword).classList.remove('input-success');
-            document.getElementById('cardbody2').classList.remove('hidedisplay');
+            
             return false;
         }else{
             document.getElementById(idEmail).classList.add('input-success');
