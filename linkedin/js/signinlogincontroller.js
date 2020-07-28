@@ -1,5 +1,5 @@
-var usuarios = [];
-
+var usuario = [];
+/* LOCAL STORAGE
 var localStorage = window.localStorage;
 
 if(localStorage.getItem('usuarios') == null){
@@ -7,13 +7,15 @@ if(localStorage.getItem('usuarios') == null){
 }else{
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 }
-
+*/
 
 function userRegister(){
+
     if(validateField('email', 'password') == true){
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         console.log(email,password);
+        console.log(document.getElementById('password').value.length);
         document.getElementById('cardbody').classList.add('hidedisplay');
         document.getElementById('cardbody2').classList.remove('hidedisplay');
         document.getElementById('cardbody2').classList.add('showdisplay');
@@ -25,16 +27,21 @@ function userRegister(){
             return true;
         }
         
+    }else{
+        if(validateField('email', 'password') == false){
+            console.log('Error');
+        }
     }
     
 }
-
+userRegister();
     function validateField(idEmail,idPassword){
-        if((document.getElementById(idEmail).value == '') || (document.getElementById(idPassword).value == '')){
+        if(document.getElementById(idEmail).value == '' || document.getElementById(idPassword).value == '' || (document.getElementById('password').value.length<6)){
             document.getElementById(idEmail).classList.add('input-err');
             document.getElementById(idEmail).classList.remove('input-success');
             document.getElementById(idPassword).classList.add('input-err');
             document.getElementById(idPassword).classList.remove('input-success');
+            document.getElementById('cardbody2').classList.remove('hidedisplay');
             return false;
         }else{
             document.getElementById(idEmail).classList.add('input-success');
@@ -60,7 +67,7 @@ function userRegister(){
             return true;
         }
     }
-
+/*
 function loginfields(name){
     document.getElementById('loginform').innerHTML='';
     if(userRegister()==true){
@@ -105,5 +112,4 @@ function loginfields(name){
         `;
         
     }
-}
-userRegister();
+}*/
