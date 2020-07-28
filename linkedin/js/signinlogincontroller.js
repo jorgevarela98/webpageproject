@@ -9,72 +9,38 @@ if(localStorage.getItem('usuarios') == null){
 }
 */
 
-function signInGenerator(){
-    userRegister();
-    userInformation();
-}
-signInGenerator();
-    function userRegister(){
+var email = '';
+var password = '';
+function userRegister(){
         
-        document.getElementById('cardbody').getElementsBy
-        if(validateField('email', 'password') == true){
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-            console.log(email,password);
-            console.log(document.getElementById('password').value.length);
-            document.getElementById('cardbody').classList.add('hidedisplay');
-            document.getElementById('cardbody2').classList.remove('hidedisplay');
-        }else{
-            if(validateField('email', 'password') == false){
-                console.log('Error');
-            }
-        }
+    if(document.getElementById('email').value == ''){
+        document.getElementById('email').classList.remove('input-success');
+        document.getElementById('email').classList.add('input-err');
         
+        window.location.reload();
+    }else{
+        document.getElementById('email').classList.add('input-success');
+        document.getElementById('email').classList.remove('input-err');
+        email = document.getElementById('email').value;
     }
+    
+    if(document.getElementById('password').value=='' || document.getElementById('password').value.length <6){
+        document.getElementById('password').classList.remove('input-success');
+        document.getElementById('password').classList.add('input-err');
+        window.location.reload();
+    }else{
+        document.getElementById('password').classList.add('input-success');
+        document.getElementById('password').classList.remove('input-err');
+        password = document.getElementById('password').value;
 
-    function userInformation(){
+        document.getElementById('cardbody').classList.add('hidedisplay');
+        document.getElementById('cardbody2').classList.remove('hidedisplay');
         document.getElementById('cardbody2').classList.add('showdisplay');
-        if(uservalidateField('name', 'apellidos') == true){
-            var names = document.getElementById('name').value;
-            var lastnames = document.getElementById('apellidos').value;
-            console.log(names,lastnames);
-            loginfields(names);
-            return true;
-        }
     }
 
-    function validateField(idEmail,idPassword){
-        if(document.getElementById(idEmail).value == '' || document.getElementById(idPassword).value == '' || (document.getElementById('password').value.length<6)){
-            document.getElementById(idEmail).classList.add('input-err');
-            document.getElementById(idEmail).classList.remove('input-success');
-            document.getElementById(idPassword).classList.add('input-err');
-            document.getElementById(idPassword).classList.remove('input-success');
-            
-            return false;
-        }else{
-            document.getElementById(idEmail).classList.add('input-success');
-            document.getElementById(idEmail).classList.remove('input-err');
-            document.getElementById(idPassword).classList.remove('input-err');
-            document.getElementById(idPassword).classList.add('input-success');
-            return true;
-        }
-    }
+}
 
-    function uservalidateField(idName, idApellidos){
-        if(document.getElementById(idName).value == '' || document.getElementById(idApellidos).value == ''){
-            document.getElementById(idName).classList.add('input-err');
-            document.getElementById(idName).classList.remove('input-success');
-            document.getElementById(idApellidos).classList.add('input-err');
-            document.getElementById(idApellidos).classList.remove('input-success');
-            return false;
-        }else{
-            document.getElementById(idName).classList.add('input-success');
-            document.getElementById(idName).classList.remove('input-err');
-            document.getElementById(idApellidos).classList.remove('input-err');
-            document.getElementById(idApellidos).classList.add('input-success');
-            return true;
-        }
-    }
+
 /*
 function loginfields(name){
     document.getElementById('loginform').innerHTML='';
