@@ -11,6 +11,8 @@ if(localStorage.getItem('usuarios') == null){
 
 var email = '';
 var password = '';
+var name = '';
+var lastname = '';
 function userRegister(){
         
     if(document.getElementById('email').value == ''){
@@ -19,8 +21,6 @@ function userRegister(){
         
         window.location.reload();
     }else{
-        document.getElementById('email').classList.add('input-success');
-        document.getElementById('email').classList.remove('input-err');
         email = document.getElementById('email').value;
     }
     
@@ -29,23 +29,46 @@ function userRegister(){
         document.getElementById('password').classList.add('input-err');
         window.location.reload();
     }else{
-        document.getElementById('password').classList.add('input-success');
-        document.getElementById('password').classList.remove('input-err');
         password = document.getElementById('password').value;
 
         document.getElementById('cardbody').classList.add('hidedisplay');
         document.getElementById('cardbody2').classList.remove('hidedisplay');
         document.getElementById('cardbody2').classList.add('showdisplay');
+        
     }
 
 }
 
+function userLogIn(){
+    if(document.getElementById('name').value=='' || document.getElementById('apellidos').value == ''){
+        document.getElementById('name').classList.remove('input-success');
+        document.getElementById('name').classList.add('input-err');
+        document.getElementById('apellidos').classList.remove('input-success');
+        document.getElementById('apellidos').classList.add('input-err');
+        window.location.reload();
+    }else{
+        name = document.getElementById('name').value;
+        lastname = document.getElementById('apellidos').value;
+        const user ={
+            nombre : name,
+            apellido:lastname,
+            emails:email,
+            contrasena: password,
+            info : []
+        }
+        console.log(user)
+        usuario.push(user);
+        console.log(usuario);
+        return true;
+    }
+}
 
-/*
-function loginfields(name){
+
+
+function loginfields(){
     document.getElementById('loginform').innerHTML='';
-    if(userRegister()==true){
-        document.getElementById('loginform').innerHTML+=`
+    if(userLogIn()==true){
+        document.getElementById('loginform').innerHTML=`
         <h5>¡Te damos la bienvenida, ${name}!</h5>
                 <p style="color: #00000080;">¿Te vas a perder tu siguiente gran oportunidad? Inicia sesión para estar al día de tu entorno profesional.</p>
                 <div>
@@ -86,4 +109,4 @@ function loginfields(name){
         `;
         
     }
-}*/
+}
