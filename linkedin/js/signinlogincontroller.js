@@ -1,4 +1,5 @@
 var usuario = [];
+
 /* LOCAL STORAGE
 var localStorage = window.localStorage;
 
@@ -61,14 +62,22 @@ function userLogIn(){
         usuario.push(user);
         console.log(usuario);
         window.location.href='profilecompletion.html';
+        regionGenerator();
     }
 }
-
-
-
 function loginfields(){
+    regionGenerator();
     usuario.forEach(function(userInfo){
         console.log(userInfo.nombre);
 
+    })
+}
+
+function regionGenerator(){
+    document.getElementById('region').innerHTML='';
+    region.forEach(function(depto){
+        document.getElementById('region').innerHTML+=`
+            <option value="${depto.valor}"> ${depto.departamento}, ${depto.municipio}</option>
+        `;
     })
 }
