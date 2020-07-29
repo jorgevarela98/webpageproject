@@ -1,10 +1,49 @@
+@font-face{
+    font-family:'Myriad';
+    src: url('../assets/fonts/myriadpro-light.otf');
+}
+
 .logodims{
     width: 160px;
 }
 .welcome-parr{
-    
+    font-family: 'Myriad';
     color: #6b6b6b8a;
 }
 .row-marg{
     margin-left: 475px;
+}
+.title-design{
+    text-align: center;
+    font-family: 'Myriad';
+}
+.form-text{
+    font-family:'Myriad';
+    text-align: left;
+    padding-top: 1rem !important;
+    margin-bottom: 0rem !important;
+}
+
+.iput-dimesions{
+    padding:8px;
+    border: solid 1px rgba(133, 132, 132, 0.541);
+    border-radius: 4px;
+    outline: none;
+    width:440px;
+}
+.btn-next{
+    
+    border: none;
+    outline: none;
+    width: 440px;
+    outline: none !important;
+    background-color: #0073b0 !important;
+    height: 45px;
+    color: #ffffffff;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+.card-body-styles{
+    background-color: #ffffff !important;
+    border: none !important;
 }
