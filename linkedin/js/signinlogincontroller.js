@@ -40,6 +40,7 @@ function userRegister(){
 }
 
 function userLogIn(){
+    let userLogIn;
     if(document.getElementById('name').value=='' || document.getElementById('apellidos').value == ''){
         document.getElementById('name').classList.remove('input-success');
         document.getElementById('name').classList.add('input-err');
@@ -56,57 +57,18 @@ function userLogIn(){
             contrasena: password,
             info : []
         }
-        console.log(user)
+        console.log(user);
         usuario.push(user);
         console.log(usuario);
-        return true;
+        window.location.href='profilecompletion.html';
     }
 }
 
 
 
 function loginfields(){
-    document.getElementById('loginform').innerHTML='';
-    if(userLogIn()==true){
-        document.getElementById('loginform').innerHTML=`
-        <h5>¡Te damos la bienvenida, ${name}!</h5>
-                <p style="color: #00000080;">¿Te vas a perder tu siguiente gran oportunidad? Inicia sesión para estar al día de tu entorno profesional.</p>
-                <div>
-                    <div class="mb-3 mt-5">
-                        <input class="inputlogin logininput-dimension" type="text" placeholder="Correo electrónico o teléfono"><br>
-                    </div>
-                    <div>
-                        <input class="inputlogin logininput-dimension" type="password" placeholder="Contraseña">
-                    </div>
-                    <div class="mt-4">
-                        <button class="loginbtn-style">Iniciar sesión</button>
-                    </div>
-                    <div class="mt-4">
-                        <a href="" class="lostpass-btn">¿Has olvidado tu contraseña?</a>
-                        <p>¿Eres nuevo en LinkedIn? <a href="signin.html" style="color: #0073b0;">Únete ahora</a></p>
-                    </div>
-                </div>
-        `;
-    }else{
-        document.getElementById('loginform').innerHTML=`
-        <h5>¡Te damos la bienvenida de nuevo!</h5>
-                <p style="color: #00000080;">¿Te vas a perder tu siguiente gran oportunidad? Inicia sesión para estar al día de tu entorno profesional.</p>
-                <div>
-                    <div class="mb-3 mt-5">
-                        <input class="inputlogin logininput-dimension" type="text" placeholder="Correo electrónico o teléfono"><br>
-                    </div>
-                    <div>
-                        <input class="inputlogin logininput-dimension" type="password" placeholder="Contraseña">
-                    </div>
-                    <div class="mt-4">
-                        <button class="loginbtn-style">Iniciar sesión</button>
-                    </div>
-                    <div class="mt-4">
-                        <a href="" class="lostpass-btn">¿Has olvidado tu contraseña?</a>
-                        <p>¿Eres nuevo en LinkedIn? <a href="signin.html" style="color: #0073b0;">Únete ahora</a></p>
-                    </div>
-                </div>
-        `;
-        
-    }
+    usuario.forEach(function(userInfo){
+        console.log(userInfo.nombre);
+
+    })
 }

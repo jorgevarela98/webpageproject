@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profilecompletion.css">
+    <script src="https://kit.fontawesome.com/f0f4eaef4c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="row">
+                <img class="logodims" src="assets/svgfiles/loginLogo.svg" alt="">
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="mt-5" style="text-align: center;">
+            <h1>¡Te damos la bienvenida de nuevo!</h1>
+        </div>
+        <div style="text-align: center;">
+            <div class="container row-marg">
+                <div class="row ">
+                    <div class="ml-5 col-xl-6">
+                        <p class="welcome-parr">Vamos a empezar por crear tu perfil, conectar con personas que conoces y hablar de temas que te interesan.</p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="card text-center mt-5 showdisplay" id="cardbody" style="width: 30rem; margin: 0 auto ">
+            <div class="card-body "  style="background-color: #EDF0F3;">
+            <p class="textalign">Email</p>
+            <input id="email" type="email" class="inputsoutlines inputdimension">
+            <p class="textalign">Contraseña (6 o más caracteres)</p>
+            <input id="password" type="password" class="inputsoutlines inputdimension">
+            <p style="font-weight: 100; font-size: 14px;">Al hacer click en «Aceptar y Unirse», aceptas las
+                <a href="">Condiciones de Uso</a>, la  <a href="">Politica de Privacidad</a>
+                y a <a href="">Politica de cookies</a> de LinkedIn
+            </p>
+            
+            <button onclick="userRegister()" class="inputdimension btns-style"   >Aceptar y unirse</button>
+            <p>o</p>
+            <button class="inputdimension fb-btn-style"><i class="fab fa-facebook-square"></i> Continuar con Facebook</button>
+            <p>¿Ya eres usuario de LinkedIn? <a href="">Iniciar Sesion</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/signinlogincontroller.js"></script>
+</body>
+</html>
