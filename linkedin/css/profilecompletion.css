@@ -47,3 +47,20 @@
     background-color: #ffffff !important;
     border: none !important;
 }
+.showdisplay{
+    display: block !important;
+}
+.hidedisplay{
+    display: none !important;
+}
+.student-btn{
+    border: none;
+    outline: none;
+    width: 440px;
+    outline: none !important;
+    background-color: #8585851f !important;
+    height: 45px;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 30px;
+}

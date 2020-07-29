@@ -56,7 +56,8 @@ function userLogIn(){
             apellido:lastname,
             emails:email,
             contrasena: password,
-            info : []
+            info : [],
+            contactos: []
         }
         console.log(user);
         usuario.push(user);
