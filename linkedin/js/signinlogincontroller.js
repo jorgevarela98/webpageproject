@@ -141,6 +141,24 @@ function regionGenerator(){
 function cardGenerator(){
     document.getElementById('connect-card').innerHTML='';
     test.forEach(function(info){
-        document.getElementById('connect-card').innerHTML+=``
+        document.getElementById('connect-card').innerHTML+=`
+        
+            <div class="card p-3 info-card-design">
+                <button class="connect-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <img src="${info.pfp}" class="card-img-top connect-pfp" alt="...">
+                <div class="card-body">
+                    <div style="text-align: left;">
+                        <p class="card-font name-card">${info.nickname}</p>
+                    </div>
+                    <div>
+                        <p class="card-font">${info.info}</p>
+                    </div>
+                </div>
+            </div>
+        
+        `;
     })
 }
+cardGenerator();
