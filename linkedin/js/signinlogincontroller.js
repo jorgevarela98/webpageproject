@@ -1,5 +1,12 @@
 var usuario = [];
-
+var test = [
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    }
+]
 /* LOCAL STORAGE
 var localStorage = window.localStorage;
 
@@ -82,3 +89,11 @@ function regionGenerator(){
         `;
     })
 }
+document.getElementById('people').innerHTML='';
+test.forEach(function(info){
+    document.getElementById('people').innerHTML+=`
+    <li value="${info.nombre}">
+    <img src="${info.pfp}">-${info.info}
+    </li>
+    `;
+})

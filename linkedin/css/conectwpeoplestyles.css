@@ -1,0 +1,24 @@
+@font-face{
+    font-family: 'Myriad';
+    src: url('../assets/fonts/myriadpro-light.otf');
+}
+
+.logo-dims{
+    width: 170px;
+}
+.search-conect{
+    margin-top: 250px;
+}
+.center-alignment{
+    text-align: center;
+}
+.title-alignment{
+    font-family: 'Myriad';
+    margin-left: 466px;
+    margin-top: 130px;
+}
+.search-input-dims{
+    width: 520px !important;
+    height: 54px;
+    padding: 6px;
+}
