@@ -14,11 +14,57 @@
 }
 .title-alignment{
     font-family: 'Myriad';
-    margin-left: 466px;
+    margin-left: 120px;
     margin-top: 130px;
 }
 .search-input-dims{
+    border: solid 1px #3d3c3c79 ;
+    color: #3d3c3c79  !important;
+    outline: none !important;
+    background-image: url('../assets/svgfiles/search-solid.svg');
+    background-repeat: no-repeat;
+    background-size:20px;
+    background-position: 10px 15px;
+    padding-left: 40px !important;
+    outline: none !important;
+    background-image: '';
+    font-family: 'Myriad';
     width: 520px !important;
     height: 54px;
     padding: 6px;
+    margin-top: 40px;
+}
+
+.card-design{
+    width: 45.6rem;
+}
+
+.connect-pfp{
+    border-radius: 200px;
+    width: 95px;
+}
+
+.connect-button{
+    color: #3d3c3c79;
+    background-color: #ffffff ;
+    border: solid 1px #3d3c3c79;
+    outline: none !important;
+    padding: 6px;
+    width: 40px;
+    border-radius: 44px;
+    position: absolute;
+    left: 136px;
+    transition: 0.1s ease-in-out;
+}
+.connect-button:hover{
+    color: #0073b0;
+    background-color: #00aeff65 ;
+    border: solid 1px #0073b0;
+}
+
+.card-font{
+    font-family: 'Myriad';
+}
+.name-card{
+    font-weight: 600;
 }

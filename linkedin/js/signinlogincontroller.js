@@ -89,11 +89,3 @@ function regionGenerator(){
         `;
     })
 }
-document.getElementById('people').innerHTML='';
-test.forEach(function(info){
-    document.getElementById('people').innerHTML+=`
-    <li value="${info.nombre}">
-    <img src="${info.pfp}">-${info.info}
-    </li>
-    `;
-})
