@@ -4,55 +4,116 @@ var test = [
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false
+    },
+    {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false 
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false 
     },
     {
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false 
     },
     {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
+    },{
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false 
     },
     {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
+    },{
         nombre:'John',
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy' 
+        info : 'Professional Spy',
+        agregar: false
+    },
+    {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
+    },{
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
+    },
+    {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
+    },{
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false
+    },
+    {
+        nombre:'Stacy',
+        nickname: 'Stacy',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy',
+        agregar: false 
     }
 ]
 /* LOCAL STORAGE
@@ -143,14 +204,14 @@ function cardGenerator(){
     test.forEach(function(info){
         document.getElementById('connect-card').innerHTML+=`
         
-            <div class="card p-3 info-card-design">
+            <div id="filterdisplay" class="card p-3 info-card-design">
                 <button class="connect-button">
                     <i class="fas fa-plus"></i>
                 </button>
                 <img src="${info.pfp}" class="card-img-top connect-pfp" alt="...">
                 <div class="card-body">
                     <div style="text-align: left;">
-                        <p class="card-font name-card">${info.nickname}</p>
+                        <p class="card-font name-card">${info.nombre}</p>
                     </div>
                     <div>
                         <p class="card-font">${info.info}</p>
@@ -162,3 +223,65 @@ function cardGenerator(){
     })
 }
 cardGenerator();
+/* 
+
+function filterNames(){
+    
+    var filter = document.getElementById('search-inp').value.toUpperCase();
+    document.getElementById('connect-card').innerHTML='';
+    test.forEach(function(search){
+        if(filter == search.nombre.toUpperCase()){
+            document.getElementById('connect-card').innerHTML+=`
+            <div class="card p-3 info-card-design">
+                <button class="connect-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <img src="${search.pfp}" class="card-img-top connect-pfp" alt="...">
+                <div class="card-body">
+                    <div style="text-align: left;">
+                        <p class="card-font name-card">${search.nombre}</p>
+                    </div>
+                    <div>
+                        <p class="card-font">${search.info}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        }else{
+            if(filter != search.nombre.toUpperCase()){
+                document.getElementById('connect-card').innerHTML+=``;
+            }else{
+                cardGenerator();
+            }
+        }
+    })
+}*/
+function filterNames(){
+    var filter = document.getElementById('search-inp').value.toUpperCase();
+    
+    document.getElementById('connect-card').innerHTML='';
+    for(i = 0 ; i < test.length ; i++){
+        for(j = 0 ; j < test[i].nombre.length ; j++){
+            if(filter[j]==test[i].nombre[j]){
+                document.getElementById('connect-card').innerHTML+=`
+                <div class="card p-3 info-card-design">
+                    <button class="connect-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <img src="${test[i].pfp}" class="card-img-top connect-pfp" alt="...">
+                    <div class="card-body">
+                        <div style="text-align: left;">
+                            <p class="card-font name-card">${test[i].nombre}</p>
+                        </div>
+                        <div>
+                            <p class="card-font">${test[i].info}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }else{
+                document.getElementById('connect-card').innerHTML+=``;
+            }
+        }
+    }
+}

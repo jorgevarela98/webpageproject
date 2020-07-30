@@ -36,11 +36,12 @@
 }
 
 .card-design{
-    width: 45.6rem;
+    width: 65.13rem;
 }
 .info-card-design{
     width: 13rem;
     height: 18rem;
+    border-radius: 0;
 }
 .connect-pfp{
     border-radius: 200px;
@@ -70,4 +71,51 @@
 }
 .name-card{
     font-weight: 600;
+}
+.nav-btns{
+    padding:8px;
+}
+.nav-design{
+    border-top: solid 1px #5a59595c !important;
+    background-color: #ffffff !important;
+
+}
+
+.saltar-btn{
+    font-family: 'Myriad';
+    outline: none !important;
+    margin-right: 40px;
+    border: 0;
+    background-color: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+.saltar-btn:hover{
+    background-color: #6d6c6c5d;
+}
+.div-nav-btns{
+    display: flex; 
+    margin-left: 45rem;
+}
+
+.select-all-btn{
+    outline: none;
+    font-family: 'Myriad';
+    border: 1px solid #68676763 !important;
+    color: #686767e7 !important;
+    background-color: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+.select-all-btn:hover{
+    background-color: #5a5a5a3f;
+}
+
+.add-contact-btn{
+    font-family: 'Myriad';
+    border: 0;
+    background-color: #0377b9;
+    color: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+.add-contact-btn:hover{
+    background-color: #065786;
 }

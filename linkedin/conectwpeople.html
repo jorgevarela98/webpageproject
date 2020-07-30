@@ -22,21 +22,44 @@
             </div>
         </div>
         <div class="center-alignment">
-            <input class="search-input-dims" id="search-conect" onkeyup="searchNames()" type="search"  placeholder=" Busca a una persona con la que conectar...">
+            <input class="search-input-dims" id="search-inp" onkeyup="filterNames()" type="search"  placeholder=" Busca a una persona con la que conectar...">
         </div>
 
         <div class="container">
-            <div class="row" id="connect-card">
-                <div class="col-xl-9">
-                    <div class="card card-design mt-5" >
+            <div class="row justify-content-center" >
+                <div class="col-xl-11">
+                    <div class="card card-design mt-5" id="card-id">
                         <div class="card-body p-0" >
-                        
+                            <div class="container-fluid">
+                                <div class="row" id="connect-card">
+
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div>
+            <nav class="navbar fixed-bottom navbar-light bg-light nav-design">
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <button class="nav-btns select-all-btn"><i class="fas fa-plus"></i>Seleccionar Todo</button>
+                        </div>
+                        <div class="div-nav-btns">
+                            <div id="next-button">
+                                <button class="nav-btns saltar-btn">Saltar</button>
+                            </div>
+                            <div id="add-friend button">
+                                <button class="nav-btns add-contact-btn">Añadir 0 Contactos</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </main>
 
 
