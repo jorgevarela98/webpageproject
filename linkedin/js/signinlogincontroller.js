@@ -5,6 +5,54 @@ var test = [
         nickname: 'Naked Snake',
         pfp :'assets/img/pfp.jpeg',
         info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
+    },
+    {
+        nombre:'John',
+        nickname: 'Naked Snake',
+        pfp :'assets/img/pfp.jpeg',
+        info : 'Professional Spy' 
     }
 ]
 /* LOCAL STORAGE
@@ -87,5 +135,12 @@ function regionGenerator(){
         document.getElementById('region').innerHTML+=`
             <option value="${depto.valor}"> ${depto.departamento}, ${depto.municipio}</option>
         `;
+    })
+}
+
+function cardGenerator(){
+    document.getElementById('connect-card').innerHTML='';
+    test.forEach(function(info){
+        document.getElementById('connect-card').innerHTML+=``
     })
 }

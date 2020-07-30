@@ -38,7 +38,10 @@
 .card-design{
     width: 45.6rem;
 }
-
+.info-card-design{
+    width: 13rem;
+    height: 18rem;
+}
 .connect-pfp{
     border-radius: 200px;
     width: 95px;
