@@ -64,3 +64,12 @@
     border-radius: 4px;
     margin-top: 30px;
 }
+.student-btn:hover{
+    background-color: #85858542 !important ;
+}
+.btn-next:hover{
+    background-color: #03669b !important;
+}
+.years-form{
+    display:flex;
+}
