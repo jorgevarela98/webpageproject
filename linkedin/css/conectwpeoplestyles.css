@@ -49,6 +49,7 @@
 }
 
 .connect-button{
+    
     color: #3d3c3c79;
     background-color: #ffffff ;
     border: solid 1px #3d3c3c79;
@@ -60,12 +61,23 @@
     left: 136px;
     transition: 0.1s ease-in-out;
 }
+
 .connect-button:hover{
     color: #0073b0;
     background-color: #00aeff65 ;
     border: solid 1px #0073b0;
 }
-
+.connect-button-success{
+    color: #15e9029a;
+    background-color: #15e90242 ;
+    border: solid 1px #15e9029a;
+    outline: none !important;
+    padding: 6px;
+    width: 40px;
+    border-radius: 44px;
+    position: absolute;
+    left: 136px;
+}
 .card-font{
     font-family: 'Myriad';
 }
@@ -118,4 +130,10 @@
 }
 .add-contact-btn:hover{
     background-color: #065786;
+}
+.showdisplay{
+    display: block !important;
+}
+.hidedisplay{
+    display: none !important;
 }

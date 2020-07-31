@@ -171,7 +171,8 @@ function userLogIn(){
             apellido:lastname,
             emails:email,
             contrasena: password,
-            info : [],
+            inforegion :[],
+            infopersonal : [],
             contactos: [],
             profilepictures:[]
         }
@@ -180,7 +181,6 @@ function userLogIn(){
         console.log(usuario);
         localStorage.setItem('usuarios',JSON.stringify(usuario));
         window.location.href='profilecompletion.html';
-        //regionGenerator();
     }
 }
 function locationInfo(){
@@ -210,41 +210,76 @@ function locationInfo(){
         console.log(locationInfo);
 
         for(var k = 0 ; k < usuario.length ; k++){
-            usuario[k].info.push(locationInfo);
-            console.log('dasdsa');
+            usuario[k].inforegion.push(locationInfo);
         }
         localStorage.setItem('usuarios',JSON.stringify(usuario));
-        //window.location.href='profilecompletion.html';
-        
+        document.getElementById('regionform').classList.remove('showdisplay');
+        document.getElementById('regionform').classList.add('hidedisplay');
+        document.getElementById('businessform').classList.remove('hidedisplay');
+        document.getElementById('businessform').classList.add('showdisplay');
     }
-
-    
 }
-
+function businessInfo(){
+    for(var i = 0 ; i < localStorage.length ; i++){
+        var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    }
+    var cargo = '';
+    var empresa = '';
+    if(document.getElementById('position').value=='' || document.getElementById('business').value == ''){
+        document.getElementById('position').classList.remove('input-success');
+        document.getElementById('position').classList.add('input-err');
+        document.getElementById('business').classList.remove('input-success');
+        document.getElementById('business').classList.add('input-err');
+        window.location.reload();
+    }else{
+        cargo = document.getElementById('position').value;
+        empresa = document.getElementById('business').value;
+        const informacionPersonal ={
+            position: cargo,
+            business : empresa
+        } 
+        for(var q = 0 ; q < usuario.length ; q++){
+            usuario[q].infopersonal.push(informacionPersonal);
+        }
+        localStorage.setItem('usuarios',JSON.stringify(usuario));
+        window.location.href='conectwpeople.html';
+    }
+}
+function showStudentInfo(){
+    document.getElementById('businessform').classList.remove('showdisplay');
+    document.getElementById('businessform').classList.add('hidedisplay');
+    document.getElementById('studentform').classList.remove('hidedisplay');
+    document.getElementById('studentform').classList.add('showdisplay');
+}
 function cardGenerator(){
     document.getElementById('connect-card').innerHTML='';
-    test.forEach(function(info){
+    for(n = 0 ; n < test.length ; n++){
         document.getElementById('connect-card').innerHTML+=`
         
             <div id="filterdisplay" class="card p-3 info-card-design">
-                <button class="connect-button">
-                    <i class="fas fa-plus"></i>
+                
+                <button id="add-person" onclick="addPerson()" class="connect-button ">
+                        <i class="fas fa-plus"></i>
                 </button>
-                <img src="${info.pfp}" class="card-img-top connect-pfp" alt="...">
+                <img src="${test[n].pfp}" class="card-img-top connect-pfp" alt="...">
                 <div class="card-body">
                     <div style="text-align: left;">
-                        <p class="card-font name-card">${info.nombre}</p>
+                        <p class="card-font name-card">${test[n].nombre}</p>
                     </div>
                     <div>
-                        <p class="card-font">${info.info}</p>
+                        <p class="card-font">${test[n].info}</p>
                     </div>
                 </div>
             </div>
         
         `;
-    })
+    }
 }
-//cardGenerator();
+cardGenerator();
+
+function addPerson(){
+
+}
 /* 
 
 function filterNames(){
