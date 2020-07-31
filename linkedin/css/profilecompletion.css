@@ -73,3 +73,9 @@
 .years-form{
     display:flex;
 }
+.input-err{
+    border: 1px solid #ff0000;
+}
+.input-success{
+    border: 1px solid #00ff00;
+}

@@ -116,15 +116,14 @@ var test = [
         agregar: false 
     }
 ]
-/* LOCAL STORAGE
+
 var localStorage = window.localStorage;
 
 if(localStorage.getItem('usuarios') == null){
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    localStorage.setItem('usuarios', JSON.stringify(usuario));
 }else{
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 }
-*/
 
 var email = '';
 var password = '';
@@ -157,7 +156,7 @@ function userRegister(){
 }
 
 function userLogIn(){
-    let userLogIn;
+    
     if(document.getElementById('name').value=='' || document.getElementById('apellidos').value == ''){
         document.getElementById('name').classList.remove('input-success');
         document.getElementById('name').classList.add('input-err');
@@ -173,30 +172,53 @@ function userLogIn(){
             emails:email,
             contrasena: password,
             info : [],
-            contactos: []
+            contactos: [],
+            profilepictures:[]
         }
         console.log(user);
         usuario.push(user);
         console.log(usuario);
+        localStorage.setItem('usuarios',JSON.stringify(usuario));
         window.location.href='profilecompletion.html';
-        regionGenerator();
+        //regionGenerator();
     }
 }
-function loginfields(){
-    regionGenerator();
-    usuario.forEach(function(userInfo){
-        console.log(userInfo.nombre);
+function locationInfo(){
+    for(var i = 0 ; i < localStorage.length ; i++){
+        var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    }
+    var pais = '';
+    var codigopostal = '';
+    var region = '';
+    if(document.getElementById('country').value=='' || document.getElementById('postalCode').value == ''){
+        document.getElementById('country').classList.remove('input-success');
+        document.getElementById('country').classList.add('input-err');
+        document.getElementById('postalCode').classList.remove('input-success');
+        document.getElementById('postalCode').classList.add('input-err');
+        window.location.reload();
+    }else{
+        
+        pais = document.getElementById('country').value;
+        codigopostal = document.getElementById('postalCode').value;
+        region = document.getElementById('departamento').value;
+        
+        const locationInfo ={
+            pais: pais,
+            codigopostal: codigopostal,
+            región: region
+        }
+        console.log(locationInfo);
 
-    })
-}
+        for(var k = 0 ; k < usuario.length ; k++){
+            usuario[k].info.push(locationInfo);
+            console.log('dasdsa');
+        }
+        localStorage.setItem('usuarios',JSON.stringify(usuario));
+        //window.location.href='profilecompletion.html';
+        
+    }
 
-function regionGenerator(){
-    document.getElementById('region').innerHTML='';
-    region.forEach(function(depto){
-        document.getElementById('region').innerHTML+=`
-            <option value="${depto.valor}"> ${depto.departamento}, ${depto.municipio}</option>
-        `;
-    })
+    
 }
 
 function cardGenerator(){
@@ -222,7 +244,7 @@ function cardGenerator(){
         `;
     })
 }
-cardGenerator();
+//cardGenerator();
 /* 
 
 function filterNames(){
@@ -285,3 +307,4 @@ function filterNames(){
         }
     }
 }
+

@@ -5,7 +5,7 @@ var region = [
         valor:'Atlantida,La Ceiba'
     },
     {
-        departamento:'Coloón',
+        departamento:'Colón',
         municipio:'Trujillo',
         valor:'Colón,Trujillo'
     },
@@ -91,9 +91,9 @@ var region = [
     }
 ]
 function regionGenerator(){
-    document.getElementById('region').innerHTML='';
+    document.getElementById('departamento').innerHTML='';
     region.forEach(function(depto){
-        document.getElementById('region').innerHTML+=`
+        document.getElementById('departamento').innerHTML+=`
             <option value="${depto.valor}"> ${depto.departamento}, ${depto.municipio}</option>
         `;
     })

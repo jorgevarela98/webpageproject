@@ -18,8 +18,8 @@
         </div>
     </nav>
     <main>
-        <!-- #1 -->
-        <div id="" class="hidedisplay">
+        <!-- #1 Region Form-->
+        <div id="" class="showdisplay">
             <div class="mt-5 title-design">
                 <h1>¡Te damos la bienvenida de nuevo!</h1>
             </div>
@@ -33,7 +33,8 @@
                     <p class="form-text">Código Postal*</p>
                     <input id="postalCode" type="text" class="input-dimensions">
                     <p class="form-text">Región*</p>
-                    <select name="" id="region" class="input-dimensions" style="background-color: #ffffff;">
+                    <select id="departamento" class="input-dimensions" style="background-color: #ffffff;">
+                        <option value="Francisco Morazán, Tegucigalpa">Francisco Morazán, Tegucigalpa</option>
                     </select>
                     <button onclick="locationInfo()" class="input-dimension btn-next">Siguiente</button>
                 </div>
@@ -61,7 +62,7 @@
             </div>
         </div>
         <!-- #3 Student Case -->
-        <div id="" class="showdisplay">
+        <div id="" class="hidedisplay">
             <div>
                 <div class="mt-5 title-design">
                     <h1>Tu perfil te ayuda a descubrir las oportunidades y personas mas adecuadas</h1>
@@ -96,7 +97,8 @@
     <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="js/popper.min.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="js/signinlogincontroller.js"></script>
     <script src="js/logincompletiongen.js"></script>
+    <script src="js/signinlogincontroller.js"></script>
+    
 </body>
 </html>
