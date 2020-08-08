@@ -1,3 +1,7 @@
+@font-face{
+    font-family:'Myriad';
+    src: url('../assets/fonts/myriadpro-light.otf');
+}
 .pfp-imgstyle{
     width: 70px;
     border-radius: 94px;
@@ -129,4 +133,42 @@
 
 .nav-btns{
     display: inline-flex;
+    font-family:'Myriad';
+}
+
+.post-dims{
+    width: auto !important;
+}
+.filter-btn{
+    cursor: pointer;
+    width: inherit;
+    outline: none !important;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 0 0 0;
+}
+.filter-btn:focus{
+    outline: none !important;
+}
+.filter-container{
+    padding-right: 0 !important;
+    padding-left:0 !important ;
+}
+.showdisplay{
+    display: block !important;
+}
+.hidedisplay{
+    display: none !important;
+}
+.card-title{
+    font-family:'Myriad' !important;
+}
+
+.div-btn{
+    background-color: #ffffff00;
+}
+
+.div-btn:hover{
+    background-color: #F6F8FA;
 }
