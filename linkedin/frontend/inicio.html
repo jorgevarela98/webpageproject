@@ -70,8 +70,8 @@
     <main class="mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-xl-1">
-                    <div class="card" style="width: 14rem;">
+                <div class="col-xl-3">
+                    <div class="card" ">
                         <img src="assets/img/asd.jpg" class="card-img-top profile-background" alt="">
                         <img src="assets/img/pfp.jpeg" class="card-img-top pfp-imgstyle"  alt="">
                         <div class="card-body card-content">
@@ -99,63 +99,126 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-1">
-                    <div style="margin-left: 160px;">
-                        <div class="card">
-                            <ul class="list-group list-group-flush" style="width: 33rem;">
-                                <li class="list-group-item">
-                                    <a href="" class="btn-post postbtn"data-toggle="modal" data-target="#postmodal"><i class="far fa-edit"></i>Comienza una publicación</a>
-                                </li>
-                                <li class="list-group-item  style="padding: 20px;">
-                                    <tr>
-                                        <th scope="row">
-                                            <a href="" class="btns-margin btn-post"><i class="fas fa-camera iconsdim camera-icon"></i>Foto</a>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <a href=""class="btns-margin btn-post"><i class="fas fa-video iconsdim video-icon"></i>Vídeo</a>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <a href="" class="btns-margin btn-post"><i class="far fa-newspaper iconsdim newspaper-icon"></i>Escribir artículo</a>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <a href="" class="btns-margin btn-post"><i class="fas fa-ellipsis-h iconsdim"></i>Más</a>
-                                        </th>
-                                    </tr>
-                                </li>
+                <div class="col-xl-6">
+                    <div class="card">
+                        <ul class="list-group list-group-flush" style="width: 33rem;">
+                            <li class="list-group-item">
+                                <a href="" class="btn-post postbtn"data-toggle="modal" data-target="#postmodal"><i class="far fa-edit"></i>Comienza una publicación</a>
+                            </li>
+                            <li class="list-group-item  style="padding: 20px;">
+                                <tr>
+                                    <th scope="row">
+                                        <a href="" class="btns-margin btn-post"><i class="fas fa-camera iconsdim camera-icon"></i>Foto</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href=""class="btns-margin btn-post"><i class="fas fa-video iconsdim video-icon"></i>Vídeo</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="" class="btns-margin btn-post"><i class="far fa-newspaper iconsdim newspaper-icon"></i>Escribir artículo</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="" class="btns-margin btn-post"><i class="fas fa-ellipsis-h iconsdim"></i>Más</a>
+                                    </th>
+                                </tr>
+                            </li>
+                        </ul>
+                    </div> 
+                    <!-- Boton para filtro-->
+                    <div class="btn-group">
+                        <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div>
+                                <hr><span>Ordernar por: Populares(dinamico)</span> 
+                            </div>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">Action</button>
+                            <button class="dropdown-item" type="button">Another action</button>
+                            <button class="dropdown-item" type="button">Something else here</button>
+                        </div>
+                    </div>
+                    <!--
+                        Generar los perfiles para conectar en inicio
+                    -->
+                    <div id="connectPeopleInicio">
+                        <div class="card" style="width: auto;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
                             </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                        Para generar Posts
+                    -->
+
+
+                    <div id="postInicio">
+                        <div class="card post-dims">
+                            <div class="card-body">
+                                <div class="card-header bg-transparent ">
+                                    <div class="row no-gutters flexes-cards" >
+                                        <div >
+                                            <img class="cardimg" src="assets/img/pfp.jpeg" class="card-img" alt="...">
+                                        </div>
+                                        <div class="card-body card-body-dims flexes-cards">
+                                            <div>
+                                                <p class="card-title" style="margin-bottom: 0 !important">Naked Snake</p>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-               
-                <div class="card" style="width: 21rem; margin-left: 15px;">
-                    <div class="divfeed">
-                        <h5 class="feed-title">Añadir a tu feed</h5>
+                <div class="col-xl-3">
+                    <div class="card" style="width: 21rem; ">
+                        <div class="divfeed">
+                            <h5 class="feed-title">Añadir a tu feed</h5>
+                        </div>
+                        <ul style="list-style-type: none;">
+                            <li>
+                                <div class="row no-gutters flexes-cards" >
+                                    <div >
+                                        <img class="cardimg" src="assets/img/pfp.jpeg" class="card-img" alt="...">
+                                    </div>
+                                    <div class="card-body card-body-dims flexes-cards">
+                                        <div>
+                                            <p class="card-title" style="margin-bottom: 0 !important">Naked Snake</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                        <div>
+                                            <a href="" class="follow-btn"><i class="fas fa-plus"></i> Seguir</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="row no-gutters flexes-cards" >
-                                <div >
-                                    <img class="cardimg" src="assets/img/pfp.jpeg" class="card-img" alt="...">
-                                </div>
-                                <div class="card-body card-body-dims flexes-cards">
-                                    <div>
-                                        <p class="card-title" style="margin-bottom: 0 !important">Naked Snake</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                    <div>
-                                        <a href="" class="follow-btn"><i class="fas fa-plus"></i> Seguir</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
