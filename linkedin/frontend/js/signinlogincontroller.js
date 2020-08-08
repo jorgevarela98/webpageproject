@@ -276,11 +276,11 @@ function cardGenerator(){
     }
 }
 cardGenerator();
-
+filterNames()
 function addPerson(){
 
 }
-/* 
+
 
 function filterNames(){
     
@@ -312,7 +312,8 @@ function filterNames(){
             }
         }
     })
-}*/
+}
+/*
 function filterNames(){
     var filter = document.getElementById('search-inp').value.toUpperCase();
     
@@ -342,4 +343,4 @@ function filterNames(){
         }
     }
 }
-
+*/
