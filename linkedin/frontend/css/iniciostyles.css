@@ -224,3 +224,33 @@
 .jobs-menu-btns:hover{
     color: #666666;
 }
+.jobs-filter{
+    background-color: #E9F1F6!important;
+}
+.jobs-filter-title{
+    font-family:'Myriad' !important;
+    text-align: center !important;
+}
+.jobs-filter-inputs{
+    font-family:'Myriad' !important;
+    width: 100%;
+    outline: none;
+    padding: 6px;
+    border: 1px solid;
+    border-color: #0F0F0F;
+}
+.jobs-filter-inputs:focus{
+    border: 2px solid  #037ec0;
+}
+.jobs-filter-btn{
+    font-family:'Myriad' !important;
+    padding: 8px;
+    background-color: #037ec0;
+    border-radius: 3px;
+    border: none;
+    color: #ffffff;
+    transition: 0.1s ease-out;
+}
+.jobs-filter-btn:hover{
+    background-color: #0469a0 ;
+}
