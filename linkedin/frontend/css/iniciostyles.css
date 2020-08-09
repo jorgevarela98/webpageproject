@@ -172,3 +172,55 @@
 .div-btn:hover{
     background-color: #F6F8FA;
 }
+.gestion-red{
+    color: #181819;
+    text-decoration: none !important;
+}
+.gestion-red:hover{
+    color: #181819 !important;
+    text-decoration: none !important;
+}
+
+.card-title{
+    font-family:'Myriad' !important;
+}
+
+.gestion-btn{
+    margin-left: auto;
+    text-decoration: none !important;
+    padding: 3px;
+    background-color: #ffffff00;
+    transition: 0.3s ease-out;
+}
+.gestion-btn:hover{
+    background-color: #e5f5fc;
+}
+.gestion-div-styles{
+    display: flex;
+    margin-bottom: 0px !important;
+}
+.show-more-btn{
+    margin-left: auto;
+    color: #8C8C8C;
+    text-decoration: none !important;
+    padding: 3px;
+    background-color: #ffffff00;
+    transition: 0.3s ease-out;
+}
+.show-more-btn:hover{
+    background-color: #F3F3F3;
+}
+.jobs-menu{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+.jobs-menu-btns{
+    font-family:'Myriad';
+    margin-right: 30px;
+    text-decoration: none !important;
+    color: #666666;
+}
+.jobs-menu-btns:hover{
+    color: #666666;
+}

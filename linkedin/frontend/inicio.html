@@ -249,7 +249,7 @@
             </div>
         </section>
         <!--Mi Red -->
-        <section id="miRed">
+        <section id="miRed" class="hidedisplay">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3">
@@ -258,62 +258,107 @@
                                 <div>
                                     <p class="card-title">Gestionar mi Red</p>
                                 </div>
-                                <div class="div-btn">
-                                    <a href="#" class=""><i class="fas fa-user-friends" style="padding-right: 6px;"></i> Contactos <i class="fas fa-plus"></i></a>
+                                <div class="div-btn"> 
+                                    <a href="#" class="gestion-red"><i class="fas fa-user-friends" style="padding-right: 6px;"></i> Contactos <i class="fas fa-plus gestion-red-plusIco" style="margin-left:90px"></i></a>
                                 </div>
                                 <div class="div-btn">
-                                    <a href="#" class=""><i class="far fa-user-circle" style="padding-right: 6px;"></i> Gente que sigo <i class="fas fa-plus"></i></a>
+                                    <a href="#" class="gestion-red"><i class="far fa-user-circle" style="padding-right: 6px;"></i> Gente que sigo <i class="fas fa-plus gestion-red-plusIco" style="margin-left: 58px;"></i></a>
                                 </div>
                                 <div class="div-btn">
-                                    <a href="#" class=""><i class="far fa-building" style="padding-right: 6px;"></i> Pagina <i class="fas fa-plus"></i></a>
+                                    <a href="#" class="gestion-red"><i class="far fa-building" style="padding-right: 6px;"></i> Pagina <i class="fas fa-plus gestion-red-plusIco" style="margin-left: 119px;"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-9">
                         <!-- Invitaciones pendientes-->
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Ninguna invitacion pendiente</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card mb-3">
+                            <div class="card-body" style="padding: 5px !important;">
+                                <div class="gestion-div-styles">
+                                    <p class="card-title">Ninguna invitacion pendiente</p>
+                                    <a href="#" class="gestion-btn">Gestionar</a>
+                                </div>
                             </div>
                         </div><!-- Fin Invitaciones pendientes-->
                         <!-- Instituciones-->
                         <div class="card">
                             <div class="card-body">
-                                Card Gente de una misma institucion, Empresas, Profesionales
+                                <div class="gestion-div-styles">
+                                    <p class="card-title">Gente que podrias conocer</p>
+                                    <a href="#" class="show-more-btn">Ver Mas</a>
+                                </div>
+                                <div id="listaAgregarConocido">
+                                    <div class="container">
+                                        <div class="row">
+                                            <!-- Se va a generar las cards aca-->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!--Sugerencias-->
                         <div class="card">
                             <div class="card-body">
-                                This is some text within a card body.
+                                <div class="gestion-div-styles">
+                                    <p class="card-title">Mas Sugerencias para ti</p>
+                                    <a href="#" class="show-more-btn">Ver Mas</a>
+                                </div>
+                                <div id="listaSugerencia">
+                                    <div class="container">
+                                        <div class="row">
+                                            <!-- Se va a generar las cards aca-->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="empleos" class="hidedisplay">
+        <section id="empleos" class="shpwdisplay">
             <!--
                 Menu de Empleos
             -->
-            <div class="card" class="hidedisplay">
-                <div class="card-body" class="hidedisplay">
-                    Menu deEmpleos
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card mb-4" >
+                            <div class="card-body" >
+                                <ul class="jobs-menu">
+                                    <li>
+                                        <a href="" class="jobs-menu-btns" ><i style="margin-right: 10px;" class="far fa-bookmark"></i> Empleos Guardados</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="jobs-menu-btns" ><i style="margin-right: 10px;" class="far fa-check-circle"></i>Empleos Solicitados</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="jobs-menu-btns" ><i style="margin-right: 10px;" class="far fa-bell"></i> Alertas de Empleo</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="jobs-menu-btns" ><i style="margin-right: 10px;" class="far fa-money-bill-alt"></i>Sueldo</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Busqieda de Empleo y Filtrado-->
+                        <div class="card" class="hidedisplay">
+                            <div class="card-body">
+                                This is some text within a card body.
+                            </div>
+                        </div>
+                        <!--Card para Mostrar Empleo-->
+                    </div>
                 </div>
             </div>
-            <!-- Busqieda de Empleo y Filtrado-->
-            <div class="card" class="hidedisplay">
-                <div class="card-body">
-                    This is some text within a card body.
-                </div>
-            </div>
-            <!--Card para Mostrar Empleo-->
+            
         </section>
 
+
+        <!--
+            Mensajes
+        -->
         <section id="mensajes" class="hidedisplay">
             <div class="container">
                 <div class="row">
@@ -327,6 +372,9 @@
                 </div>
             </div>
         </section>
+        <!--
+            Notificaciones
+        -->
         <section id="notificaciones" class="hidedisplay">
             <div class="container">
                 <div class="row">
