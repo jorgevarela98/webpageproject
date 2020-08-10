@@ -281,11 +281,18 @@ function studentInfo(){
         document.getElementById('gradDate').classList.add('input-err');
         window.location.reload();
     }else{
-        cargo = document.getElementById('position').value;
-        empresa = document.getElementById('business').value;
+        
+        universidad = document.getElementById('university').value;
+        titulo = document.getElementById('degree').value;
+        especializacion = document.getElementById('specialization').value;
+        fechaInicial = document.getElementById('initialDate').value;
+        fechaGraduacion = document.getElementById('gradDate').value;
         const informacionPersonal ={
-            position: cargo,
-            business : empresa
+            university : universidad,
+            degree : titulo,
+            specialization : especializacion,
+            initialDate : fechaInicial,
+            gradDate : fechaGraduacion
         } 
         for(var q = 0 ; q < usuario.length ; q++){
             usuario[q].infopersonal.push(informacionPersonal);
