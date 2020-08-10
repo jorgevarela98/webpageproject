@@ -129,6 +129,11 @@ var email = '';
 var password = '';
 var name = '';
 var lastname = '';
+var cargo = '';
+var empresa = '';
+var pais = '';
+var codigopostal = '';
+var region = '';
 function userRegister(){
         
     if(document.getElementById('email').value == ''){
@@ -187,9 +192,7 @@ function locationInfo(){
     for(var i = 0 ; i < localStorage.length ; i++){
         var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
     }
-    var pais = '';
-    var codigopostal = '';
-    var region = '';
+   
     if(document.getElementById('country').value=='' || document.getElementById('postalCode').value == ''){
         document.getElementById('country').classList.remove('input-success');
         document.getElementById('country').classList.add('input-err');
@@ -219,12 +222,20 @@ function locationInfo(){
         document.getElementById('businessform').classList.add('showdisplay');
     }
 }
+
+function showBusinessForm(){
+    document.getElementById('studentform').classList.remove('showdisplay');
+    document.getElementById('studentform').classList.add('hidedisplay');
+    
+    document.getElementById('businessform').classList.remove('hidedisplay');
+    document.getElementById('businessform').classList.add('showdisplay');
+}
+
 function businessInfo(){
     for(var i = 0 ; i < localStorage.length ; i++){
         var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
     }
-    var cargo = '';
-    var empresa = '';
+    
     if(document.getElementById('position').value=='' || document.getElementById('business').value == ''){
         document.getElementById('position').classList.remove('input-success');
         document.getElementById('position').classList.add('input-err');
@@ -242,8 +253,12 @@ function businessInfo(){
             usuario[q].infopersonal.push(informacionPersonal);
         }
         localStorage.setItem('usuarios',JSON.stringify(usuario));
+        
         window.location.href='conectwpeople.html';
     }
+}
+function studentInfo(){
+
 }
 function showStudentInfo(){
     document.getElementById('businessform').classList.remove('showdisplay');
@@ -251,6 +266,7 @@ function showStudentInfo(){
     document.getElementById('studentform').classList.remove('hidedisplay');
     document.getElementById('studentform').classList.add('showdisplay');
 }
+cardGenerator();
 function cardGenerator(){
     document.getElementById('connect-card').innerHTML='';
     for(n = 0 ; n < test.length ; n++){
@@ -258,7 +274,7 @@ function cardGenerator(){
         
             <div id="filterdisplay" class="card p-3 info-card-design">
                 
-                <button id="add-person" onclick="addPerson()" class="connect-button ">
+                <button id="add-person" onclick="addPerson(${n})" class="connect-button ">
                         <i class="fas fa-plus"></i>
                 </button>
                 <img src="${test[n].pfp}" class="card-img-top connect-pfp" alt="...">
