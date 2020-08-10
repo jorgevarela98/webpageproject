@@ -125,6 +125,7 @@ if(localStorage.getItem('usuarios') == null){
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 }
 
+
 var email = '';
 var password = '';
 var name = '';
@@ -134,6 +135,12 @@ var empresa = '';
 var pais = '';
 var codigopostal = '';
 var region = '';
+var universidad = '';
+var titulo = '';
+var especializacion = '';
+var fechaInicial ='';
+var fechaGraduacion = '';
+
 function userRegister(){
         
     if(document.getElementById('email').value == ''){
@@ -258,7 +265,35 @@ function businessInfo(){
     }
 }
 function studentInfo(){
-
+    for(var i = 0 ; i < localStorage.length ; i++){
+        var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    }
+    if(document.getElementById('university').value=='' || document.getElementById('degree').value == ''|| document.getElementById('specialization').value == ''|| document.getElementById('initialDate').value == ''|| document.getElementById('gradDate').value == ''){
+        document.getElementById('university').classList.remove('input-success');
+        document.getElementById('university').classList.add('input-err');
+        document.getElementById('degree').classList.remove('input-success');
+        document.getElementById('degree').classList.add('input-err');
+        document.getElementById('specialization').classList.remove('input-success');
+        document.getElementById('specialization').classList.add('input-err');
+        document.getElementById('initialDate').classList.remove('input-success');
+        document.getElementById('initialDate').classList.add('input-err');
+        document.getElementById('gradDate').classList.remove('input-success');
+        document.getElementById('gradDate').classList.add('input-err');
+        window.location.reload();
+    }else{
+        cargo = document.getElementById('position').value;
+        empresa = document.getElementById('business').value;
+        const informacionPersonal ={
+            position: cargo,
+            business : empresa
+        } 
+        for(var q = 0 ; q < usuario.length ; q++){
+            usuario[q].infopersonal.push(informacionPersonal);
+        }
+    }
+    localStorage.setItem('usuarios',JSON.stringify(usuario));
+        
+    window.location.href='conectwpeople.html';
 }
 function showStudentInfo(){
     document.getElementById('businessform').classList.remove('showdisplay');
@@ -333,6 +368,7 @@ function filterNames(){
     var filter = document.getElementById('search-inp').value.toUpperCase();
     
     document.getElementById('connect-card').innerHTML='';
+    //Filtra los nombres pero por cada letra sin volverlo Uppercase.
     for(i = 0 ; i < test.length ; i++){
         for(j = 0 ; j < test[i].nombre.length ; j++){
             if(filter[j]==test[i].nombre[j]){
