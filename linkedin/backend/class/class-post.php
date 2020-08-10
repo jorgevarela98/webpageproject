@@ -5,17 +5,23 @@
         private $imagen;
         private $video;
         private $reactions;
+        private $postCode;
+        private $userCode;
 
         public function __construct(
-            $postContent,
-            $imagen,
-            $video,
-            $reactions
+                $postContent,
+                $imagen,
+                $video,
+                $reactions,
+                $postCode,
+                $userCode
         ){
-            $this->postContent = $postContent;
-            $this->imagen = $imagen;
-            $this->video = $video;
-            $this->reactions = $reactions;
+                $this->postContent = $postContent;
+                $this->imagen = $imagen;
+                $this->video = $video;
+                $this->reactions = $reactions;
+                $this->postCode = $postCode;
+                $this->userCode = $userCode;
         }
 
         /**
@@ -94,6 +100,46 @@
         public function setReactions($reactions)
         {
                 $this->reactions = $reactions;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of postCode
+         */ 
+        public function getPostCode()
+        {
+                return $this->postCode;
+        }
+
+        /**
+         * Set the value of postCode
+         *
+         * @return  self
+         */ 
+        public function setPostCode($postCode)
+        {
+                $this->postCode = $postCode;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of userCode
+         */ 
+        public function getUserCode()
+        {
+                return $this->userCode;
+        }
+
+        /**
+         * Set the value of userCode
+         *
+         * @return  self
+         */ 
+        public function setUserCode($userCode)
+        {
+                $this->userCode = $userCode;
 
                 return $this;
         }

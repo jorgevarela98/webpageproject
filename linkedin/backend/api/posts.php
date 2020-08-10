@@ -1,18 +1,22 @@
 <?php
 
-    class Post{
-        private $postCode;
-        private $userCode;
-        private $postContent;
-        private $image;
-        private $video;
-        private $reactions;
+    header("ContentType: application/json");
+    include_once("../class/class-post.php");
+    $_POST = json_decode(file_get_contents("php://input"),true);
 
-        public function __construct(
-
-        ){
-            
-        }
+    switch($_SERVER['REQUEST_METHOD']){
+        case 'POST':
+            //Agregar un nuevo post
+        break;
+        case 'GET':
+            //Obtener Post
+        break;
+        case 'PUT':
+            //actualizar un post
+        break;
+        case 'DELETE':
+            //borrar algun post
+        break;
     }
 
 ?>
