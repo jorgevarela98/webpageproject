@@ -6,6 +6,7 @@ var test = [
         pfp :'assets/img/pfp.jpeg',
         info : 'Professional Spy',
         agregar: false
+        
     },
     {
         nombre:'John',
@@ -311,13 +312,14 @@ function showStudentInfo(){
 cardGenerator();
 function cardGenerator(){
     document.getElementById('connect-card').innerHTML='';
-    for(n = 0 ; n < test.length ; n++){
+    for(let n = 0 ; n < test.length ; n++){
         document.getElementById('connect-card').innerHTML+=`
         
             <div id="filterdisplay" class="card p-3 info-card-design">
                 
-                <button id="add-person" onclick="addPerson(${n})" class="connect-button ">
-                        <i class="fas fa-plus"></i>
+                <button id="connectButton"  onclick="addPerson(${n})" class="connect-button ">
+                        <i id="add-person" class="fas fa-plus"></i>
+                        <i id="add-person-success" class="fas fa-check hidedisplay"></i>
                 </button>
                 <img src="${test[n].pfp}" class="card-img-top connect-pfp" alt="...">
                 <div class="card-body">
@@ -334,8 +336,16 @@ function cardGenerator(){
     }
 }
 
-function addPerson(){
-
+function addPerson(index){
+    console.log(index);
+    
+    document.getElementById('add-person').classList.add('hidedisplay')
+    document.getElementById('connectButton').classList.remove('connect-button');
+    document.getElementById('add-person-success').classList.remove('hidedisplay'); 
+    document.getElementById('add-person-success').classList.add('showdisplay'); 
+    document.getElementById('connectButton').classList.add('connect-button-success');
+    
+    
 }
 
 
