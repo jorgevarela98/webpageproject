@@ -275,8 +275,7 @@ function cardGenerator(){
         `;
     }
 }
-cardGenerator();
-filterNames()
+
 function addPerson(){
 
 }
