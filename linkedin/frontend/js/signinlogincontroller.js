@@ -274,7 +274,7 @@ function businessInfo(){
         fechaGraduacion
         */ 
         axios({
-            url:'../../api/usuarios.php',
+            url:'../api/usuarios.php',
             method:'post',
             responseType: 'json',
             data:{
