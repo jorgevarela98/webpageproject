@@ -27,7 +27,19 @@
                 }
 
 
-                
+                public function saveUser(){
+                        if(file_get_contents('../data/usuarios.json') == false){
+                                $users[]=array(
+                                        "name" =>$this->name,
+                                        "lastname" =>$this->lastname,
+                                        "email" =>$this->email,
+                                        "password" =>$this->password,
+                                        "locationInfo" =>$this->locationInfo,
+                                        "personalInfo" =>$this->personalInfo,
+                                        "userCode" =>$this->userCode
+                                )
+                        }
+                }
 
                 /**
                  * Get the value of name

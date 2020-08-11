@@ -125,8 +125,7 @@ if(localStorage.getItem('usuarios') == null){
 }else{
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 }
-
-
+const user ={};
 var email = '';
 var password = '';
 var name = '';
@@ -261,8 +260,49 @@ function businessInfo(){
             usuario[q].infopersonal.push(informacionPersonal);
         }
         localStorage.setItem('usuarios',JSON.stringify(usuario));
+        /*
+        email
+        password
         
-        window.location.href='conectwpeople.html';
+        cargo
+        empresa
+        
+        codigopostal
+        region
+        universidad
+        titulo
+        especializacion
+        fechaInicial
+        fechaGraduacion
+        */ 
+        axios({
+            url:'../../api/usuarios.php',
+            method:'post',
+            responseType: 'json',
+            data:{
+                name:name,
+                lastname:lastname,
+                email:email,
+                password: password,
+                locationInfo:{
+                    country:pais,
+                    region:
+                    postalcode:
+                },
+                personalInfo:{
+
+                },
+                userCode:
+            }
+        }).then(res=>{
+            console.log('Info Usuario: ',res);
+        }).catch(error=>{
+            console.error(error);
+        });
+        //window.location.href='inicio.html';
+        /*
+        conect w people Still doesnt work :'v
+        */ 
     }
 }
 function studentInfo(){
@@ -300,7 +340,16 @@ function studentInfo(){
         }
     }
     localStorage.setItem('usuarios',JSON.stringify(usuario));
-        
+    axios({
+        url:'../api/usuarios.php',
+        method:'post',
+        responseType: 'json',
+        data:user
+    }).then(res=>{
+        console.log('Info Usuario: ',res);
+    }).catch(error=>{
+        console.error(error);
+    });
     window.location.href='conectwpeople.html';
 }
 function showStudentInfo(){

@@ -5,16 +5,16 @@
 
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST':
-            //Agregar un nuevo post
+            //Agregar un nuevo usuario
         break;
         case 'GET':
-            //Obtener Post
+            //Obtener usuario
         break;
         case 'PUT':
-            //actualizar un post
+            //actualizar un usuario
         break;
         case 'DELETE':
-            //borrar algun post
+            //borrar algun usuario
         break;
     }
 
