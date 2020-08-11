@@ -6,6 +6,16 @@
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST':
             //Agregar un nuevo usuario
+            $user = new Usuario(
+                $_POST["name"],
+                $_POST["lastname"],
+                $_POST["email"],
+                $_POST["password"],
+                $_POST["locationInfo"],
+                $_POST["personalInfo"],
+                $_POST["userCode"]
+            );
+            $user->saveUser();
         break;
         case 'GET':
             //Obtener usuario

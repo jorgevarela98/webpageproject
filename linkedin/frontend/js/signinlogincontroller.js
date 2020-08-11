@@ -261,14 +261,12 @@ function businessInfo(){
         }
         localStorage.setItem('usuarios',JSON.stringify(usuario));
         /*
-        email
-        password
         
-        cargo
-        empresa
         
-        codigopostal
-        region
+        
+        
+        
+        
         universidad
         titulo
         especializacion
@@ -286,13 +284,14 @@ function businessInfo(){
                 password: password,
                 locationInfo:{
                     country:pais,
-                    region:
-                    postalcode:
+                    region:region,
+                    postalcode:codigopostal
                 },
                 personalInfo:{
-
+                    job : cargo,
+                    business:empresa
                 },
-                userCode:
+                userCode:1
             }
         }).then(res=>{
             console.log('Info Usuario: ',res);

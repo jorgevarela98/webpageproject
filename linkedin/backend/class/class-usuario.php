@@ -37,7 +37,11 @@
                                         "locationInfo" =>$this->locationInfo,
                                         "personalInfo" =>$this->personalInfo,
                                         "userCode" =>$this->userCode
-                                )
+                                );
+                                $archivo = fopen('../data/usuarios.json','w');
+                                fwrite($archivo,json_encode($users));
+                                fclose($archivo);
+                                echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
                         }
                 }
 
