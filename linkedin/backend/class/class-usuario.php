@@ -28,22 +28,21 @@
 
 
                 public function saveUser(){
-                        if(file_get_contents('../data/usuarios.json') == false){
-                                $users[]=array(
-                                        "name" =>$this->name,
-                                        "lastname" =>$this->lastname,
-                                        "email" =>$this->email,
-                                        "password" =>$this->password,
-                                        "locationInfo" =>$this->locationInfo,
-                                        "personalInfo" =>$this->personalInfo,
-                                        "userCode" =>$this->userCode
-                                );
-                                $archivo = fopen('../data/usuarios.json','w');
-                                fwrite($archivo,json_encode($users));
-                                fclose($archivo);
-                                echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
-                        }
+                        $users[]=array(
+                                "name"=>$this->name,
+                                "lastname"=>$this->lastname,
+                                "email"=>$this->email,
+                                "password"=>$this->password,
+                                "locationInfo"=>$this->locationInfo,
+                                "personalInfo"=>$this->personalInfo,
+                                "userCode"=>$this->userCode
+                        );
+                        $archivo = fopen('../data/usuarios.json','w');
+                        fwrite($archivo,json_encode($users));
+                        fclose($archivo);
+                        echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
                 }
+                
 
                 /**
                  * Get the value of name

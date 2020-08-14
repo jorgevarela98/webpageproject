@@ -188,7 +188,7 @@ function userLogIn(){
             contactos: [],
             profilepictures:[]
         }
-        console.log(user);
+        console.log(name);
         usuario.push(user);
         console.log(usuario);
         localStorage.setItem('usuarios',JSON.stringify(usuario));
@@ -217,11 +217,13 @@ function locationInfo(){
             codigopostal: codigopostal,
             región: region
         }
+        console.log(name);
         console.log(locationInfo);
 
         for(var k = 0 ; k < usuario.length ; k++){
             usuario[k].inforegion.push(locationInfo);
         }
+        
         localStorage.setItem('usuarios',JSON.stringify(usuario));
         document.getElementById('regionform').classList.remove('showdisplay');
         document.getElementById('regionform').classList.add('hidedisplay');
@@ -274,7 +276,7 @@ function businessInfo(){
         fechaGraduacion
         */ 
         axios({
-            url:'../api/usuarios.php',
+            url:'../backend/api/usuarios.php',
             method:'post',
             responseType: 'json',
             data:{
@@ -294,6 +296,7 @@ function businessInfo(){
                 userCode:1
             }
         }).then(res=>{
+            console.log(name);
             console.log('Info Usuario: ',res);
         }).catch(error=>{
             console.error(error);
