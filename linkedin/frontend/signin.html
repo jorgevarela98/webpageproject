@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/signinstyles.css">
+    <link rel="stylesheet" href="css/profilecompletion.css">
     <script src="https://kit.fontawesome.com/f0f4eaef4c.js" crossorigin="anonymous"></script>
 </head>
 <body class="singinBackground">
@@ -50,6 +51,94 @@
                 </div>
             </div>
         </div> 
+        <!--
+            TEST
+        -->     
+        <section>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="row">
+                        <img class="logodims" src="assets/svgfiles/loginLogo.svg" alt="">
+                    </div>
+                </div>
+            </nav>
+            <main>
+                <!-- #1 Region Form-->
+                <div id="regionform" class="showdisplay">
+                    <div class="mt-5 title-design">
+                        <h1>¡Te damos la bienvenida de nuevo!</h1>
+                    </div>
+                    <div style="text-align: center;">
+                        <p class="welcome-parr">Vamos a empezar por crear tu perfil, conectar con personas que conoces y hablar de temas que te interesan.</p>
+                    </div>
+                    <div class="text-center mt-5 showdisplay" id="cardbody" style="width: 30rem; margin: 0 auto ">
+                        <div class="card-body card-body-styles">
+                            <p class="form-text">País/región*</p>
+                            <input id="country" type="text" class="input-dimensions">
+                            <p class="form-text">Código Postal*</p>
+                            <input id="postalCode" type="text" class="input-dimensions">
+                            <p class="form-text">Región*</p>
+                            <select id="departamento" class="input-dimensions" style="background-color: #ffffff;">
+                                
+                            </select>
+                            <button onclick="locationInfo()" class="input-dimension btn-next">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- #2 Business Case -->
+                <div id="businessform" class="hidedisplay">
+                    <div>
+                        <div class="mt-5 title-design">
+                            <h1>Tu perfil te ayuda a descubrir las oportunidades y personas mas adecuadas</h1>
+                        </div>
+                        <div style="text-align: center;">
+                            <p class="welcome-parr">Vamos a empezar por crear tu perfil, conectar con personas que conoces y hablar de temas que te interesan.</p>
+                        </div>
+                        <div class="text-center mt-5 showdisplay" id="cardbody" style="width: 30rem; margin: 0 auto ">
+                            <div class="card-body card-body-styles">
+                                <p class="form-text">Cargo más reciente*</p>
+                                <input id="position" type="text" class="input-dimensions">
+                                <p class="form-text">Empresa más reciente*</p>
+                                <input id="business" type="text" class="input-dimensions">
+                                <button onclick="showStudentInfo()" class="input-dimension student-btn">Soy Estudiante</button>
+                                <button onclick="businessInfo()" class="input-dimension btn-next">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #3 Student Case -->
+                <div id="studentform" class="hidedisplay">
+                    <div>
+                        <div class="mt-5 title-design">
+                            <h1>Tu perfil te ayuda a descubrir las oportunidades y personas mas adecuadas</h1>
+                        </div>
+                        <div style="text-align: center;">
+                            <p class="welcome-parr">Vamos a empezar por crear tu perfil, conectar con personas que conoces y hablar de temas que te interesan.</p>
+                        </div>
+                        <div class="text-center mt-5 showdisplay" id="cardbody" style="width: 30rem; margin: 0 auto ">
+                            <div class="card-body card-body-styles">
+                                <p class="form-text">Universidad o centro de Estudios*</p>
+                                <input id="university" type="text" class="input-dimensions">
+                                <p class="form-text">Título*</p>
+                                <input id="degree" type="text" class="input-dimensions">
+                                <p class="form-text">Especialización*</p>
+                                <input id="specialization" type="text" class="input-dimensions">
+                                <div class="years-form">
+                                    <p class="form-text">Año de inicio*</p>                           
+                                    <p class="form-text" style="margin-left: 150px;">Año de finalizacion(o previsto)*</p>
+                                </div>
+                                <div>
+                                    <input id="initialDate" type="month" >
+                                    <input id="gradDate" type="month" >
+                                </div>
+                                <button onclick="showBusinessForm()" class="input-dimension student-btn">No Soy Estudiante</button>
+                                <button onclick="studentInfo()" class="input-dimension btn-next">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        
     </main>
 
 
@@ -57,6 +146,7 @@
     <script src="js/popper.min.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="js/axios.min.js"></script>
+    <script src="js/logincompletiongen.js"></script>
     <script src="js/signinlogincontroller.js"></script>
 </body>
 </html>

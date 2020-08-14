@@ -1,4 +1,4 @@
-var usuario = [];
+//var usuario = [];
 var test = [
     {
         nombre:'John',
@@ -118,14 +118,14 @@ var test = [
     }
 ]
 
-var localStorage = window.localStorage;
-
+//var localStorage = window.localStorage;
+/*
 if(localStorage.getItem('usuarios') == null){
     localStorage.setItem('usuarios', JSON.stringify(usuario));
 }else{
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
-}
-const user ={};
+}*/
+
 var email = '';
 var password = '';
 var name = '';
@@ -178,7 +178,7 @@ function userLogIn(){
     }else{
         name = document.getElementById('name').value;
         lastname = document.getElementById('apellidos').value;
-        const user ={
+       /* const user ={
             nombre : name,
             apellido:lastname,
             emails:email,
@@ -187,12 +187,12 @@ function userLogIn(){
             infopersonal : [],
             contactos: [],
             profilepictures:[]
-        }
+        }*/
         console.log(name);
         usuario.push(user);
         console.log(usuario);
-        localStorage.setItem('usuarios',JSON.stringify(usuario));
-        window.location.href='profilecompletion.html';
+       // localStorage.setItem('usuarios',JSON.stringify(usuario));
+       // window.location.href='profilecompletion.html';
     }
 }
 function locationInfo(){
@@ -212,19 +212,19 @@ function locationInfo(){
         codigopostal = document.getElementById('postalCode').value;
         region = document.getElementById('departamento').value;
         
-        const locationInfo ={
+       /* const locationInfo ={
             pais: pais,
             codigopostal: codigopostal,
             región: region
-        }
+        }*/
         console.log(name);
         console.log(locationInfo);
 
-        for(var k = 0 ; k < usuario.length ; k++){
+        /*for(var k = 0 ; k < usuario.length ; k++){
             usuario[k].inforegion.push(locationInfo);
-        }
+        }*/
         
-        localStorage.setItem('usuarios',JSON.stringify(usuario));
+        //localStorage.setItem('usuarios',JSON.stringify(usuario));
         document.getElementById('regionform').classList.remove('showdisplay');
         document.getElementById('regionform').classList.add('hidedisplay');
         document.getElementById('businessform').classList.remove('hidedisplay');
@@ -254,14 +254,14 @@ function businessInfo(){
     }else{
         cargo = document.getElementById('position').value;
         empresa = document.getElementById('business').value;
-        const informacionPersonal ={
+        /*const informacionPersonal ={
             position: cargo,
             business : empresa
         } 
         for(var q = 0 ; q < usuario.length ; q++){
             usuario[q].infopersonal.push(informacionPersonal);
         }
-        localStorage.setItem('usuarios',JSON.stringify(usuario));
+        localStorage.setItem('usuarios',JSON.stringify(usuario));*/
         /*
         
         
@@ -308,9 +308,9 @@ function businessInfo(){
     }
 }
 function studentInfo(){
-    for(var i = 0 ; i < localStorage.length ; i++){
+    /*for(var i = 0 ; i < localStorage.length ; i++){
         var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    }
+    }*/
     if(document.getElementById('university').value=='' || document.getElementById('degree').value == ''|| document.getElementById('specialization').value == ''|| document.getElementById('initialDate').value == ''|| document.getElementById('gradDate').value == ''){
         document.getElementById('university').classList.remove('input-success');
         document.getElementById('university').classList.add('input-err');
@@ -330,7 +330,7 @@ function studentInfo(){
         especializacion = document.getElementById('specialization').value;
         fechaInicial = document.getElementById('initialDate').value;
         fechaGraduacion = document.getElementById('gradDate').value;
-        const informacionPersonal ={
+        /*const informacionPersonal ={
             university : universidad,
             degree : titulo,
             specialization : especializacion,
@@ -339,11 +339,11 @@ function studentInfo(){
         } 
         for(var q = 0 ; q < usuario.length ; q++){
             usuario[q].infopersonal.push(informacionPersonal);
-        }
+        }*/
     }
-    localStorage.setItem('usuarios',JSON.stringify(usuario));
+    //localStorage.setItem('usuarios',JSON.stringify(usuario));
     axios({
-        url:'../api/usuarios.php',
+        url:'../backend/api/usuarios.php',
         method:'post',
         responseType: 'json',
         data:user
