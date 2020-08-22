@@ -7,12 +7,13 @@
                 private $locationInfo;
                 private $personalInfo;
                 private $userCode;
-
+                private $typeAccount;
                 public function __construct(
                         $name,
                         $lastname,
                         $email,
                         $password,
+                        $typeAccount,
                         $locationInfo,
                         $personalInfo,
                         $userCode
@@ -21,6 +22,7 @@
                         $this->lastname = $lastname;
                         $this->email = $email;
                         $this->password = $password;
+                        $this->typeAccount = $typeAccount;
                         $this->locationInfo = $locationInfo;
                         $this->personalInfo = $personalInfo;
                         $this->userCode = $userCode;
@@ -34,6 +36,7 @@
                                         "lastname"=>$this->lastname,
                                         "email"=>$this->email,
                                         "password"=>$this->password,
+                                        "typeAccount"=>$this->typeAccount,
                                         "locationInfo"=>$this->locationInfo,
                                         "personalInfo"=>$this->personalInfo,
                                         "userCode"=>$this->userCode
@@ -50,6 +53,7 @@
                                         "lastname"=>$this->lastname,
                                         "email"=>$this->email,
                                         "password"=>$this->password,
+                                        "typeAccount"=>$this->typeAccount,
                                         "locationInfo"=>$this->locationInfo,
                                         "personalInfo"=>$this->personalInfo,
                                         "userCode"=>$this->userCode
@@ -227,6 +231,26 @@
                 public function setUserCode($userCode)
                 {
                                 $this->userCode = $userCode;
+
+                                return $this;
+                }
+
+                /**
+                 * Get the value of typeAccount
+                 */ 
+                public function getTypeAccount()
+                {
+                                return $this->typeAccount;
+                }
+
+                /**
+                 * Set the value of typeAccount
+                 *
+                 * @return  self
+                 */ 
+                public function setTypeAccount($typeAccount)
+                {
+                                $this->typeAccount = $typeAccount;
 
                                 return $this;
                 }

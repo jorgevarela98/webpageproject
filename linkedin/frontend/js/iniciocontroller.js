@@ -7,12 +7,12 @@ function showInicioUserCard(){
         method:'get',
         responseType: 'json'
     }).then(res=>{
-        //console.log(res.data);
+        console.log(res.data);
         //console.log(actualUserName);
         //console.log(res.data.typeAccount);
         actualUserName = res.data.name;
         userCode = res.data.userCode;
-        
+        console.log(actualUserName);
         document.getElementById('inicioProfileCard').innerHTML=''
         
         if(res.data.typeAccount == "business"){
@@ -21,7 +21,7 @@ function showInicioUserCard(){
                     <img src="assets/img/asd.jpg" class="card-img-top profile-background" alt="">
                     <img src="assets/img/pfp.jpeg" class="card-img-top pfp-imgstyle"  alt="">
                     <div class="card-body card-content">
-                        <h5 class="card-title">¡Te damos la bienvenida, ${res.data.name}!</h5>
+                        <h5 class="card-title">¡Te damos la bienvenida, ${actualUserName}!</h5>
                         <p class="info-p">Worker at ${res.data.personalInfo.business} as ${res.data.personalInfo.job} </p>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -129,15 +129,13 @@ function savePost(){
         method:'get',
         responseType: 'json'
     }).then(res=>{
-     postId = res.data.length;
-        
         axios({
             url:'../backend/api/posts.php',
             method: 'post',
             responseType: 'json',
             data:{
                 userCode:1,
-                postCode:(postId),
+                postCode:(res.data.length+1),
                 contentPost: document.getElementById('textarea-publicacion').value,
                 coments:[]
             }

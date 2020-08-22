@@ -18,16 +18,32 @@
                 self::setPostCode($codigoPost);
                 self::setPostContent($contenidoPost);
                 self::setComents($comentarios);
-                $post[]=array(
-                        "userCode"=>$this->userCode,
-                        "postCode"=>$this->postCode,
-                        "contentPost"=>$this->postContent,
-                        "coments"=>$this->coments
-                );
-                $file = fopen('../data/posts.json','w');
-                fwrite($file, json_encode($post));
-                fclose($file);
-                echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
+                if(fopen('../data/usuarios.json','r') == null){
+                        $post[]=array(
+                                "userCode"=>$this->userCode,
+                                "postCode"=>$this->postCode,
+                                "contentPost"=>$this->postContent,
+                                "coments"=>$this->coments
+                        );
+                        $file = fopen('../data/posts.json','w');
+                        fwrite($file, json_encode($post));
+                        fclose($file);
+                        echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
+                }else{
+                        $fileContentPosts = file_get_contents('../data/posts.json');
+                        $posts = json_decode($fileContentPosts,true);
+                        $post[]=array(
+                                "userCode"=>$this->userCode,
+                                "postCode"=>$this->postCode,
+                                "contentPost"=>$this->postContent,
+                                "coments"=>$this->coments
+                        );
+                        $file = fopen('../data/posts.json','w');
+                        fwrite($file, json_encode($post));
+                        fclose($file);
+                        echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
+                }
+                
         }
 
         public static function getPosts(){

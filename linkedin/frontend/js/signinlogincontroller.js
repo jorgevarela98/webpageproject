@@ -115,7 +115,7 @@ function businessInfo(){
             method:'get',
             responseType: 'json',
         }).then(res=>{
-            alert(res.data.length+1);
+            
             axios({
                 url:'../backend/api/usuarios.php',
                 method:'post',
@@ -140,12 +140,14 @@ function businessInfo(){
             }).then(res=>{
                 console.log(name);
                 console.log('Info Usuario: ',res);
+                window.location.href='inicio.html';
             }).catch(error=>{
                 console.error(error);
             });
-        }).catch(error=>{});
+        }).catch(error=>{
+            console.error(error);
+        });
         
-        window.location.href='inicio.html';
         /*
         conect w people Still doesnt work :'v
         */ 
@@ -207,12 +209,15 @@ function studentInfo(){
             }).then(res=>{
                 console.log(name);
                 console.log('Info Usuario: ',res);
+                window.location.href='inicio.html';
             }).catch(error=>{
                 console.error(error);
             });
-        }).catch(error=>{});
+        }).catch(error=>{
+            console.error(error);
+        });
         
-        window.location.href='inicio.html';
+        
     } 
 }
 function showStudentInfo(){
