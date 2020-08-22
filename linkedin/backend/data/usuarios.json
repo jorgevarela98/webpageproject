@@ -1,16 +1,1 @@
-[
-  {
-    "name": "Jorge",
-    "lastname": "Varela",
-    "email": "jormivaroli98@hotmail.com",
-    "password": "csacacas",
-    "typeAccount": "business",
-    "locationInfo": {
-      "country": "Honduras",
-      "region": "Atlantida,La Ceiba",
-      "postalcode": "110011"
-    },
-    "personalInfo": { "job": "Software Engineer", "business": "Patreon" },
-    "userCode": 1
-  }
-]
+[{"name":"Jorge","lastname":"Varela","email":"jorgevarela@gmail.com","password":"5501f100661840c7e6e677629fe8d501e53d597a","locationInfo":{"country":"Honduras","region":"Tegucigalpa, Francisco Morazan","postalcode":"110011"},"personalInfo":{"job":"Software Engineer","business":"Patreon"},"userCode":1},{"name":"Dev","lastname":"Amigda","email":"jormivaroli98@hotmail.com","password":"701f03a8c96713549723e8bb54ac86949cc1c4de","locationInfo":{"country":"Hondruas","region":"Ocotepeque,Ocotepeque","postalcode":"110011"},"personalInfo":{"job":"None","business":"None"},"userCode":2}]

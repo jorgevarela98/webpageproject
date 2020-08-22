@@ -1,6 +1,6 @@
 var actualUserName = '';
-var postId = postId + 1;
-var userCode=0;
+var postId =0;
+var userCode=1;
 function showInicioUserCard(){
     axios({
         url:'../backend/api/usuarios.php?idUsuario='+1,
@@ -120,28 +120,44 @@ function showInicioUserCard(){
         console.error(error);
     });
 }
+
 function savePost(){
     console.log(actualUserName);
+    console.log(postId);
     axios({
         url:'../backend/api/posts.php',
-        method: 'post',
-        responseType: 'json',
-        data:{
-            userCode:userCode,
-            postCode:(postId),
-            contentPost: document.getElementById('textarea-publicacion').value,
-            coments:[]
-        }
+        method:'get',
+        responseType: 'json'
     }).then(res=>{
-        console.log(res);
-        $('#postmodal').modal('hide');
-        generatePost();
+        if(res.data.length == null){
+            postId =1;
+        }else{
+            postId = res.data.length;
+        }
+            axios({
+                url:'../backend/api/posts.php',
+                method: 'post',
+                responseType: 'json',
+                data:{
+                    userCode:1,
+                    postCode:(postId),
+                    contentPost: document.getElementById('textarea-publicacion').value,
+                    coments:[]
+                }
+            }).then(res=>{
+                console.log(res);
+                $('#postmodal').modal('hide');
+                generatePost();
+            }).catch(error=>{
+                console.error(error);
+            });
     }).catch(error=>{
         console.error(error);
     });
 }
 
 function generatePost(){
+    
     axios({
         url:'../backend/api/posts.php',
         method: 'get',
@@ -179,6 +195,7 @@ function generatePost(){
         console.error(error);
     });
 }
+
 
 function main(){
     

@@ -28,19 +28,37 @@
 
 
                 public function saveUser(){
-                        $users[]=array(
-                                "name"=>$this->name,
-                                "lastname"=>$this->lastname,
-                                "email"=>$this->email,
-                                "password"=>$this->password,
-                                "locationInfo"=>$this->locationInfo,
-                                "personalInfo"=>$this->personalInfo,
-                                "userCode"=>$this->userCode
-                        );
-                        $file = fopen('../data/usuarios.json','w');
-                        fwrite($file,json_encode($users));
-                        fclose($file);
-                        echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
+                        if(fopen('../data/usuarios.json','r') == null){
+                                $users[]=array(
+                                        "name"=>$this->name,
+                                        "lastname"=>$this->lastname,
+                                        "email"=>$this->email,
+                                        "password"=>$this->password,
+                                        "locationInfo"=>$this->locationInfo,
+                                        "personalInfo"=>$this->personalInfo,
+                                        "userCode"=>$this->userCode
+                                );
+                                $file = fopen('../data/usuarios.json','w');
+                                fwrite($file,json_encode($users));
+                                fclose($file);
+                                echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
+                        }else{
+                                $fileContentUsers = file_get_contents('../data/usuarios.json');
+                                $users = json_decode($fileContentUsers,true);
+                                $users[]=array(
+                                        "name"=>$this->name,
+                                        "lastname"=>$this->lastname,
+                                        "email"=>$this->email,
+                                        "password"=>$this->password,
+                                        "locationInfo"=>$this->locationInfo,
+                                        "personalInfo"=>$this->personalInfo,
+                                        "userCode"=>$this->userCode
+                                );
+                                $file = fopen('../data/usuarios.json','w');
+                                fwrite($file,json_encode($users));
+                                fclose($file);
+                                echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
+                        }
                 }
 
                 public static function getUsers(){
@@ -61,6 +79,16 @@
                         echo json_encode($user);
                 }
 
+                public static function verifyUser($email, $password){
+                        $fileContentsUsers = file_get_contents('../data/usuarios.json');
+                        $users = json_decode($fileContentsUsers,true);
+                        for($i=0;$i<sizeof($users);$i++){
+                                if($users[$i]["email"] == $email && $users[$i]["password"] == sha1($password)){
+                                        return $users[$i];
+                                }
+                        }
+                        return null;
+                }
                 /**
                  * Get the value of name
                  */ 
@@ -141,25 +169,7 @@
                                 return $this;
                 }
 
-                /**
-                 * Get the value of userCode
-                 */ 
-                public function getUserCode()
-                {
-                                return $this->userCode;
-                }
-
-                /**
-                 * Set the value of userCode
-                 *
-                 * @return  self
-                 */ 
-                public function setUserCode($userCode)
-                {
-                                $this->userCode = $userCode;
-
-                                return $this;
-                }
+                
 
                 /**
                  * Get the value of locationInfo
@@ -197,6 +207,26 @@
                 public function setPersonalInfo($personalInfo)
                 {
                                 $this->personalInfo = $personalInfo;
+
+                                return $this;
+                }
+
+                /**
+                 * Get the value of userCode
+                 */ 
+                public function getUserCode()
+                {
+                                return $this->userCode;
+                }
+
+                /**
+                 * Set the value of userCode
+                 *
+                 * @return  self
+                 */ 
+                public function setUserCode($userCode)
+                {
+                                $this->userCode = $userCode;
 
                                 return $this;
                 }

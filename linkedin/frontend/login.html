@@ -20,13 +20,14 @@
                 <p style="color: #00000080;">¿Te vas a perder tu siguiente gran oportunidad? Inicia sesión para estar al día de tu entorno profesional.</p>
                 <div>
                     <div class="mb-3 mt-5">
-                        <input class="inputlogin logininput-dimension" type="text" placeholder="Correo electrónico o teléfono"><br>
+                        <div class="alert alert-danger" id="error" style="display: none;"></div>
+                        <input class="inputlogin logininput-dimension" id="login-email" type="text" placeholder="Correo electrónico o teléfono"><br>
                     </div>
                     <div>
-                        <input class="inputlogin logininput-dimension" type="password" placeholder="Contraseña">
+                        <input class="inputlogin logininput-dimension" id="login-password" type="password" placeholder="Contraseña">
                     </div>
                     <div class="mt-4">
-                        <button class="loginbtn-style">Iniciar sesión</button>
+                        <button class="loginbtn-style" type="buttonds" onclick="login()">Iniciar sesión</button>
                     </div>
                     <div class="mt-4">
                         <a href="" class="lostpass-btn">¿Has olvidado tu contraseña?</a>
@@ -40,7 +41,9 @@
     <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="js/popper.min.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/axios.min.js"></script>
     <script src="js/signinlogincontroller.js"></script>
+    <script src="js/logincontroller.js"></script>
     
 </body>
 </html>

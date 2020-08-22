@@ -1,130 +1,3 @@
-//var usuario = [];
-var test = [
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-        
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },
-    {
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },{
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },{
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },{
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    },{
-        nombre:'John',
-        nickname: 'Naked Snake',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false
-    },
-    {
-        nombre:'Stacy',
-        nickname: 'Stacy',
-        pfp :'assets/img/pfp.jpeg',
-        info : 'Professional Spy',
-        agregar: false 
-    }
-]
-
-//var localStorage = window.localStorage;
-/*
-if(localStorage.getItem('usuarios') == null){
-    localStorage.setItem('usuarios', JSON.stringify(usuario));
-}else{
-    usuarios = JSON.parse(localStorage.getItem('usuarios'));
-}*/
 
 var email = '';
 var password = '';
@@ -237,34 +110,41 @@ function businessInfo(){
     }else{
         cargo = document.getElementById('position').value;
         empresa = document.getElementById('business').value;
-        
         axios({
             url:'../backend/api/usuarios.php',
-            method:'post',
+            method:'get',
             responseType: 'json',
-            userCode:(idUser+1),
-            data:{
-                name:name,
-                lastname:lastname,
-                email:email,
-                password: password,
-                typeAccount: "business",
-                locationInfo:{
-                    country:pais,
-                    region:region,
-                    postalcode:codigopostal
-                },
-                personalInfo:{
-                    job : cargo,
-                    business:empresa
-                }
-            }
         }).then(res=>{
-            console.log(name);
-            console.log('Info Usuario: ',res);
-        }).catch(error=>{
-            console.error(error);
-        });
+            alert(res.data.length+1);
+            axios({
+                url:'../backend/api/usuarios.php',
+                method:'post',
+                responseType: 'json',
+                data:{
+                    name:name,
+                    lastname:lastname,
+                    email:email,
+                    password: password,
+                    typeAccount: "business",
+                    locationInfo:{
+                        country:pais,
+                        region:region,
+                        postalcode:codigopostal
+                    },
+                    personalInfo:{
+                        job : cargo,
+                        business:empresa
+                    },
+                    userCode:(res.data.length+1)
+                }
+            }).then(res=>{
+                console.log(name);
+                console.log('Info Usuario: ',res);
+            }).catch(error=>{
+                console.error(error);
+            });
+        }).catch(error=>{});
+        
         window.location.href='inicio.html';
         /*
         conect w people Still doesnt work :'v
@@ -296,35 +176,43 @@ function studentInfo(){
         fechaGraduacion = document.getElementById('gradDate').value;
         axios({
             url:'../backend/api/usuarios.php',
-            method:'post',
+            method:'get',
             responseType: 'json',
-            userCode:(idUser+1),
-            data:{
-                name:name,
-                lastname:lastname,
-                email:email,
-                password: password,
-                typeAccount: "school",
-                locationInfo:{
-                    country:pais,
-                    region:region,
-                    postalcode:codigopostal
-                },
-                personalInfo:{
-                    university:universidad,
-                    degree :titulo,
-                    specialization : especializacion,
-                    initialdate : fechaInicial,
-                    graduationDate : fechaGraduacion
-                },
-            }
-        
         }).then(res=>{
-            console.log('Info Usuario: ',res);
-        }).catch(error=>{
-            console.error(error);
-        });
-        window.location.href='conectwpeople.html';
+            alert(res.data.length+1);
+            axios({
+                url:'../backend/api/usuarios.php',
+                method:'post',
+                responseType: 'json',
+                data:{
+                    name:name,
+                    lastname:lastname,
+                    email:email,
+                    password: password,
+                    typeAccount: "school",
+                    locationInfo:{
+                        country:pais,
+                        region:region,
+                        postalcode:codigopostal
+                    },
+                    personalInfo:{
+                        university:universidad,
+                        degree :titulo,
+                        specialization : especializacion,
+                        initialdate : fechaInicial,
+                        graduationDate : fechaGraduacion
+                    },
+                    userCode:(res.data.length+1)
+                }
+            }).then(res=>{
+                console.log(name);
+                console.log('Info Usuario: ',res);
+            }).catch(error=>{
+                console.error(error);
+            });
+        }).catch(error=>{});
+        
+        window.location.href='inicio.html';
     } 
 }
 function showStudentInfo(){

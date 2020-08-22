@@ -10,7 +10,7 @@
                 $_POST["name"],
                 $_POST["lastname"],
                 $_POST["email"],
-                $_POST["password"],
+                sha1($_POST["password"]),
                 $_POST["locationInfo"],
                 $_POST["personalInfo"],
                 $_POST["userCode"]
