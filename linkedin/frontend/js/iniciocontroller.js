@@ -129,28 +129,25 @@ function savePost(){
         method:'get',
         responseType: 'json'
     }).then(res=>{
-        if(res.data.length == null){
-            postId =1;
-        }else{
-            postId = res.data.length;
-        }
-            axios({
-                url:'../backend/api/posts.php',
-                method: 'post',
-                responseType: 'json',
-                data:{
-                    userCode:1,
-                    postCode:(postId),
-                    contentPost: document.getElementById('textarea-publicacion').value,
-                    coments:[]
-                }
-            }).then(res=>{
-                console.log(res);
-                $('#postmodal').modal('hide');
-                generatePost();
-            }).catch(error=>{
-                console.error(error);
-            });
+     postId = res.data.length;
+        
+        axios({
+            url:'../backend/api/posts.php',
+            method: 'post',
+            responseType: 'json',
+            data:{
+                userCode:1,
+                postCode:(postId),
+                contentPost: document.getElementById('textarea-publicacion').value,
+                coments:[]
+            }
+        }).then(res=>{
+            console.log(res);
+            $('#postmodal').modal('hide');
+            generatePost();
+        }).catch(error=>{
+            console.error(error);
+        });
     }).catch(error=>{
         console.error(error);
     });

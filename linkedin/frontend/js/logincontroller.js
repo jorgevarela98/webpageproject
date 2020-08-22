@@ -10,7 +10,7 @@ function login(){
     }).then(res=>{
         console.log(res);
         if(res.data.codigoResultado==1){
-            window.location.href = "inicio.html";
+            //window.location.href = "inicio.html";
         }else{
             document.getElementById('error').style.display ='block';
             document.getElementById('error').innerHTML= res.data.mensaje;
