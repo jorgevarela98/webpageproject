@@ -178,27 +178,20 @@ function userLogIn(){
     }else{
         name = document.getElementById('name').value;
         lastname = document.getElementById('apellidos').value;
-       /* const user ={
-            nombre : name,
-            apellido:lastname,
-            emails:email,
-            contrasena: password,
-            inforegion :[],
-            infopersonal : [],
-            contactos: [],
-            profilepictures:[]
-        }*/
-        console.log(name);
-        usuario.push(user);
-        console.log(usuario);
-       // localStorage.setItem('usuarios',JSON.stringify(usuario));
-       // window.location.href='profilecompletion.html';
+        
+        document.getElementById('signIn-1').classList.add('hidedisplay');
+        document.getElementById('signIn-1').classList.remove('showdisplay');
+        document.getElementById('cardbody2').classList.add('hidedisplay');
+        document.getElementById('cardbody2').classList.remove('showdisplay');
+        document.getElementById('body-background').classList.remove('singinBackground');
+        document.getElementById('profileCompletion-form').classList.remove('hidedisplay');
+        document.getElementById('profileCompletion-form').classList.add('showdisplay');
+        document.getElementById('regionform').classList.remove('hidedisplay');
+        document.getElementById('regionform').classList.add('showdisplay');
     }
 }
 function locationInfo(){
-    for(var i = 0 ; i < localStorage.length ; i++){
-        var usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    }
+    
    
     if(document.getElementById('country').value=='' || document.getElementById('postalCode').value == ''){
         document.getElementById('country').classList.remove('input-success');
@@ -254,27 +247,7 @@ function businessInfo(){
     }else{
         cargo = document.getElementById('position').value;
         empresa = document.getElementById('business').value;
-        /*const informacionPersonal ={
-            position: cargo,
-            business : empresa
-        } 
-        for(var q = 0 ; q < usuario.length ; q++){
-            usuario[q].infopersonal.push(informacionPersonal);
-        }
-        localStorage.setItem('usuarios',JSON.stringify(usuario));*/
-        /*
         
-        
-        
-        
-        
-        
-        universidad
-        titulo
-        especializacion
-        fechaInicial
-        fechaGraduacion
-        */ 
         axios({
             url:'../backend/api/usuarios.php',
             method:'post',
