@@ -37,15 +37,28 @@
                                 "personalInfo"=>$this->personalInfo,
                                 "userCode"=>$this->userCode
                         );
-                        $archivo = fopen('../data/usuarios.json','w');
-                        fwrite($archivo,json_encode($users));
-                        fclose($archivo);
+                        $file = fopen('../data/usuarios.json','w');
+                        fwrite($file,json_encode($users));
+                        fclose($file);
                         echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
                 }
 
                 public static function getUsers(){
                         $fileContentUsers = file_get_contents('../data/usuarios.json');
                         echo  $fileContentUsers;
+                }
+
+                public static function getUser($idUsuario){
+                        $fileContentUsers = file_get_contents('../data/usuarios.json');
+                        $users = json_decode($fileContentUsers,true);
+                        $user = null;
+                        for($i=0;$i<sizeof($users);$i++){
+                                if($users[$i]["userCode"] == $idUsuario){
+                                        $user = $users[$i];
+                                        break;
+                                }
+                        }
+                        echo json_encode($user);
                 }
 
                 /**

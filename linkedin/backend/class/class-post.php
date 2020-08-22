@@ -7,21 +7,25 @@
         private $reactions;
         private $postCode;
         private $userCode;
-
+        
         public function __construct(
-                $postContent,
-                $imagen,
-                $video,
-                $reactions,
-                $postCode,
-                $userCode
         ){
-                $this->postContent = $postContent;
-                $this->imagen = $imagen;
-                $this->video = $video;
-                $this->reactions = $reactions;
-                $this->postCode = $postCode;
-                $this->userCode = $userCode;
+        }
+
+        public function savePost($codigoUsuario, $codigoPost, $contenidoPost){
+                self::setUserCode($codigoUsuario);
+                self::setPostCode($codigoPost);
+                self::setPostContent($contenidoPost);
+                
+                $post[]=array(
+                        "userCode"=>$this->userCode,
+                        "postCode"=>$this->postCode,
+                        "contentPost"=>$this->postContent
+                );
+                $file = fopen('../data/posts.json','w');
+                fwrite($file, json_encode($post));
+                fclose($file);
+                echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
         }
 
         /**

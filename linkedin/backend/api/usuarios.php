@@ -19,8 +19,8 @@
         break;
         case 'GET':
             //Obtener usuario
-            if(isset($_GET['idUsuario'])){
-
+            if(isset($_GET["idUsuario"])){
+                Usuario::getUser($_GET["idUsuario"]);
             }else{
                 Usuario::getUsers();
             }

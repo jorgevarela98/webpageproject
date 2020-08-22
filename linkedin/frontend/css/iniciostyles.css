@@ -254,3 +254,15 @@
 .jobs-filter-btn:hover{
     background-color: #0469a0 ;
 }
+.textarea-styles{
+    outline: none;
+    border: none;
+    font-family:'Myriad' !important;
+}
+.btn-primary{
+    background-color:#0582c5 !important;
+    transition: 0.3s ease-in;
+}
+.btn-primary:hover{
+    background-color:#045885 !important;
+}
