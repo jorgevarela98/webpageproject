@@ -11,6 +11,7 @@
                 $_POST["lastname"],
                 $_POST["email"],
                 sha1($_POST["password"]),
+                $_POST["typeAccount"],
                 $_POST["locationInfo"],
                 $_POST["personalInfo"],
                 $_POST["userCode"]

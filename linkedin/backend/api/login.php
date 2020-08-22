@@ -8,7 +8,8 @@
             //Verificar si el usuario existe
             $user = Usuario::verifyUser($_POST["email"],$_POST["password"]);
             if($user){
-                echo '{"codigoResultado":1 ,"mensaje":"Usuario Autenticado",$user}';
+                $codigoUsuario = json_encode($user["userCode"]);
+                echo '{"codigoResultado":1 ,"mensaje":"Usuario Autenticado"}';
             }else{
                 echo '{"codigoResultado":0,"mensaje":"Correo/Password no existe"}';
             }

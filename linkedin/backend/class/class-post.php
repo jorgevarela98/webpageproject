@@ -19,27 +19,27 @@
                 self::setPostContent($contenidoPost);
                 self::setComents($comentarios);
                 if(fopen('../data/usuarios.json','r') == null){
-                        $post[]=array(
+                        $posts[]=array(
                                 "userCode"=>$this->userCode,
                                 "postCode"=>$this->postCode,
                                 "contentPost"=>$this->postContent,
                                 "coments"=>$this->coments
                         );
                         $file = fopen('../data/posts.json','w');
-                        fwrite($file, json_encode($post));
+                        fwrite($file, json_encode($posts));
                         fclose($file);
                         echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
                 }else{
                         $fileContentPosts = file_get_contents('../data/posts.json');
                         $posts = json_decode($fileContentPosts,true);
-                        $post[]=array(
+                        $posts[]=array(
                                 "userCode"=>$this->userCode,
                                 "postCode"=>$this->postCode,
                                 "contentPost"=>$this->postContent,
                                 "coments"=>$this->coments
                         );
                         $file = fopen('../data/posts.json','w');
-                        fwrite($file, json_encode($post));
+                        fwrite($file, json_encode($posts));
                         fclose($file);
                         echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
                 }

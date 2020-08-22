@@ -8,6 +8,7 @@
                 private $personalInfo;
                 private $userCode;
                 private $typeAccount;
+
                 public function __construct(
                         $name,
                         $lastname,
@@ -173,7 +174,25 @@
                                 return $this;
                 }
 
-                
+                /**
+                 * Get the value of typeAccount
+                 */ 
+                public function getTypeAccount()
+                {
+                                return $this->typeAccount;
+                }
+
+                /**
+                 * Set the value of typeAccount
+                 *
+                 * @return  self
+                 */ 
+                public function setTypeAccount($typeAccount)
+                {
+                                $this->typeAccount = $typeAccount;
+
+                                return $this;
+                }
 
                 /**
                  * Get the value of locationInfo
@@ -235,25 +254,7 @@
                                 return $this;
                 }
 
-                /**
-                 * Get the value of typeAccount
-                 */ 
-                public function getTypeAccount()
-                {
-                                return $this->typeAccount;
-                }
-
-                /**
-                 * Set the value of typeAccount
-                 *
-                 * @return  self
-                 */ 
-                public function setTypeAccount($typeAccount)
-                {
-                                $this->typeAccount = $typeAccount;
-
-                                return $this;
-                }
+                
         }
 
 ?>
