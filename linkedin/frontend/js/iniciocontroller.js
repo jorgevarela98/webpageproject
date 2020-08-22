@@ -1,5 +1,5 @@
 var actualUserName = '';
-var postId = 0;
+var postId = postId + 1;
 var userCode=0;
 function showInicioUserCard(){
     axios({
@@ -11,7 +11,7 @@ function showInicioUserCard(){
         //console.log(actualUserName);
         //console.log(res.data.typeAccount);
         actualUserName = res.data.name;
-        userCode
+        userCode = res.data.userCode;
         
         document.getElementById('inicioProfileCard').innerHTML=''
         
@@ -127,13 +127,62 @@ function savePost(){
         method: 'post',
         responseType: 'json',
         data:{
-            userCode:
+            userCode:userCode,
+            postCode:(postId),
+            contentPost: document.getElementById('textarea-publicacion').value,
+            coments:[]
         }
-    }).then(res=>{}).catch(error=>{});
+    }).then(res=>{
+        console.log(res);
+        $('#postmodal').modal('hide');
+        generatePost();
+    }).catch(error=>{
+        console.error(error);
+    });
 }
+
+function generatePost(){
+    axios({
+        url:'../backend/api/posts.php',
+        method: 'get',
+        responseType: 'json'
+    }).then(res=>{
+        console.log(res);
+        document.getElementById('postsInicio').innerHTML='';
+        for(let i = 0 ; i<res.data.length; i++){
+            document.getElementById('postsInicio').innerHTML=`
+            <div class="card post-dims">
+                <div class="card-body">
+                    <div class="card-header bg-transparent ">
+                        <div class="row no-gutters flexes-cards" >
+                            <div >
+                                <img class="cardimg" src="assets/img/pfp.jpeg" class="card-img" alt="...">
+                            </div>
+                            <div class="card-body card-body-dims flexes-cards">
+                                <div>
+                                    <p class="card-title" style="margin-bottom: 0 !important">Naked Snake</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            `;
+        }
+    }).catch(error=>{
+        console.error(error);
+    });
+}
+
 function main(){
     
     showInicioUserCard();
-    
+    generatePost();
 }
 main();

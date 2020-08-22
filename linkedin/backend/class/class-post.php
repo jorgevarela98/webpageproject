@@ -7,25 +7,45 @@
         private $reactions;
         private $postCode;
         private $userCode;
-        
+        private $coments;
+
         public function __construct(
         ){
         }
 
-        public function savePost($codigoUsuario, $codigoPost, $contenidoPost){
+        public function savePost($codigoUsuario, $codigoPost, $contenidoPost,$comentarios){
                 self::setUserCode($codigoUsuario);
                 self::setPostCode($codigoPost);
                 self::setPostContent($contenidoPost);
-                
+                self::setComents($comentarios);
                 $post[]=array(
                         "userCode"=>$this->userCode,
                         "postCode"=>$this->postCode,
-                        "contentPost"=>$this->postContent
+                        "contentPost"=>$this->postContent,
+                        "coments"=>$this->coments
                 );
                 $file = fopen('../data/posts.json','w');
                 fwrite($file, json_encode($post));
                 fclose($file);
                 echo '{"codigoResultado":1,"mensaje":"Post Guardado con exito"}';
+        }
+
+        public static function getPosts(){
+                $fileContentPosts = file_get_contents('../data/posts.json');
+                echo  $fileContentPosts;
+        }
+
+        public static function getPost($idPost){
+                $fileContentPosts = file_get_contents('../data/prosts.json');
+                $posts = json_decode($fileContentPosts,true);
+                $post = null;
+                for($i=0;$i<sizeof($posts);$i++){
+                        if($posts[$i]["postCode"] == $idPost){
+                                $post = $posts[$i];
+                        break;
+                        }
+                }
+                echo json_encode($post);
         }
 
         /**
@@ -144,6 +164,26 @@
         public function setUserCode($userCode)
         {
                 $this->userCode = $userCode;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of coments
+         */ 
+        public function getComents()
+        {
+                return $this->coments;
+        }
+
+        /**
+         * Set the value of coments
+         *
+         * @return  self
+         */ 
+        public function setComents($coments)
+        {
+                $this->coments = $coments;
 
                 return $this;
         }
