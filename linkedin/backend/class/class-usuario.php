@@ -42,7 +42,11 @@
                         fclose($archivo);
                         echo '{"codigoResultado":1,"mensaje":"Usuario Guardado con exito"}';
                 }
-                
+
+                public static function getUsers(){
+                        $fileContentUsers = file_get_contents('../data/usuarios.json');
+                        echo  $fileContentUsers;
+                }
 
                 /**
                  * Get the value of name

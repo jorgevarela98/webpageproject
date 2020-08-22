@@ -140,7 +140,7 @@ var titulo = '';
 var especializacion = '';
 var fechaInicial ='';
 var fechaGraduacion = '';
-
+var idUser = 0;
 function userRegister(){
         
     if(document.getElementById('email').value == ''){
@@ -205,19 +205,9 @@ function locationInfo(){
         codigopostal = document.getElementById('postalCode').value;
         region = document.getElementById('departamento').value;
         
-       /* const locationInfo ={
-            pais: pais,
-            codigopostal: codigopostal,
-            región: region
-        }*/
         console.log(name);
         console.log(locationInfo);
 
-        /*for(var k = 0 ; k < usuario.length ; k++){
-            usuario[k].inforegion.push(locationInfo);
-        }*/
-        
-        //localStorage.setItem('usuarios',JSON.stringify(usuario));
         document.getElementById('regionform').classList.remove('showdisplay');
         document.getElementById('regionform').classList.add('hidedisplay');
         document.getElementById('businessform').classList.remove('hidedisplay');
@@ -252,11 +242,13 @@ function businessInfo(){
             url:'../backend/api/usuarios.php',
             method:'post',
             responseType: 'json',
+            userCode:(idUser+1),
             data:{
                 name:name,
                 lastname:lastname,
                 email:email,
                 password: password,
+                typeAccount: "business",
                 locationInfo:{
                     country:pais,
                     region:region,
@@ -265,8 +257,7 @@ function businessInfo(){
                 personalInfo:{
                     job : cargo,
                     business:empresa
-                },
-                userCode:1
+                }
             }
         }).then(res=>{
             console.log(name);
@@ -274,7 +265,7 @@ function businessInfo(){
         }).catch(error=>{
             console.error(error);
         });
-        //window.location.href='inicio.html';
+        window.location.href='inicio.html';
         /*
         conect w people Still doesnt work :'v
         */ 
@@ -303,29 +294,38 @@ function studentInfo(){
         especializacion = document.getElementById('specialization').value;
         fechaInicial = document.getElementById('initialDate').value;
         fechaGraduacion = document.getElementById('gradDate').value;
-        /*const informacionPersonal ={
-            university : universidad,
-            degree : titulo,
-            specialization : especializacion,
-            initialDate : fechaInicial,
-            gradDate : fechaGraduacion
-        } 
-        for(var q = 0 ; q < usuario.length ; q++){
-            usuario[q].infopersonal.push(informacionPersonal);
-        }*/
-    }
-    //localStorage.setItem('usuarios',JSON.stringify(usuario));
-    axios({
-        url:'../backend/api/usuarios.php',
-        method:'post',
-        responseType: 'json',
-        data:user
-    }).then(res=>{
-        console.log('Info Usuario: ',res);
-    }).catch(error=>{
-        console.error(error);
-    });
-    window.location.href='conectwpeople.html';
+        axios({
+            url:'../backend/api/usuarios.php',
+            method:'post',
+            responseType: 'json',
+            userCode:(idUser+1),
+            data:{
+                name:name,
+                lastname:lastname,
+                email:email,
+                password: password,
+                typeAccount: "school",
+                locationInfo:{
+                    country:pais,
+                    region:region,
+                    postalcode:codigopostal
+                },
+                personalInfo:{
+                    university:universidad,
+                    degree :titulo,
+                    specialization : especializacion,
+                    initialdate : fechaInicial,
+                    graduationDate : fechaGraduacion
+                },
+            }
+        
+        }).then(res=>{
+            console.log('Info Usuario: ',res);
+        }).catch(error=>{
+            console.error(error);
+        });
+        window.location.href='conectwpeople.html';
+    } 
 }
 function showStudentInfo(){
     document.getElementById('businessform').classList.remove('showdisplay');
@@ -333,8 +333,8 @@ function showStudentInfo(){
     document.getElementById('studentform').classList.remove('hidedisplay');
     document.getElementById('studentform').classList.add('showdisplay');
 }
-cardGenerator();
-function cardGenerator(){
+//cardGenerator();
+/*function cardGenerator(){
     document.getElementById('connect-card').innerHTML='';
     for(let n = 0 ; n < test.length ; n++){
         document.getElementById('connect-card').innerHTML+=`
@@ -358,7 +358,7 @@ function cardGenerator(){
         
         `;
     }
-}
+}*/
 
 function addPerson(index){
     console.log(index);
@@ -436,3 +436,4 @@ function filterNames(){
     }
 }
 */
+

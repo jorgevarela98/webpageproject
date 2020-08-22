@@ -19,6 +19,11 @@
         break;
         case 'GET':
             //Obtener usuario
+            if(isset($_GET['idUsuario'])){
+
+            }else{
+                Usuario::getUsers();
+            }
         break;
         case 'PUT':
             //actualizar un usuario

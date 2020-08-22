@@ -1,1 +1,16 @@
-[{"name":"Jorge","lastname":"Varela","email":"jormivaroli98@hotmail.com","password":"lokiSeLaComeToda","locationInfo":{"country":"Honduras","region":"Olancho,Juticalpa","postalcode":"110011"},"personalInfo":{"job":"SoftEngineer","business":"Google"},"userCode":1}]
+[
+  {
+    "name": "Jorge",
+    "lastname": "Varela",
+    "email": "jormivaroli98@hotmail.com",
+    "password": "csacacas",
+    "typeAccount": "business",
+    "locationInfo": {
+      "country": "Honduras",
+      "region": "Atlantida,La Ceiba",
+      "postalcode": "110011"
+    },
+    "personalInfo": { "job": "Software Engineer", "business": "Patreon" },
+    "userCode": 1
+  }
+]
