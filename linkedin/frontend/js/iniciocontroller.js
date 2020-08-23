@@ -187,11 +187,11 @@ function generatePost(){
                         <p class="card-text">${res.data[i].contentPost}</p>
                         <hr>
                         <p>Comentarios</p>
-                        <div id="commentary-section">
+                        <div id="commentary-section-${res.data[i].postCode}">
                         </div>
                         <div>
-                            <input class="" id="commentInput"  type="text"  placeholder="Comentar...">
-                            <button type="button" class="btn btn-primary" onclick="SaveCommentary(${i})">Commentar</button>
+                            <input class="" id="commentInput-${res.data[i].postCode}"  type="text"  placeholder="Comentar...">
+                            <button type="button" class="btn btn-primary" onclick="saveCommentary(${i+1})">Commentar</button>
                         </div>
                     </div>
                 </div>
@@ -207,6 +207,34 @@ function generatePost(){
     });
 }
 
+function saveCommentary(idPost){
+    console.log(idPost);
+    
+            axios({
+                url:'../backend/api/posts.php',
+                method: 'get',
+                responseType: 'json'
+            }).then(res=>{
+                axios({
+                    url:'../backend/api/comentarios.php',
+                    method: 'post',
+                    responseType: 'json',
+                    data:{
+                        userCode:1,
+                        postCode:idPost,
+                        commentContent:document.getElementById('commentInput-'+(idPost)).value,
+                        commentCode:2
+                    }
+                }).then(res=>{
+                    console.log(res);
+                }).catch(error=>{
+                    console.error(error);
+                });
+            }).catch(error=>{
+                console.error(error);
+            });
+       
+}
 
 function main(){
     
