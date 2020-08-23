@@ -1,1 +1,36 @@
-[{"name":"Jorge","lastname":"Varela","email":"jorgevarela@gmail.com","password":"5501f100661840c7e6e677629fe8d501e53d597a","typeAccount":"business","locationInfo":{"country":"Honduras","region":"Tegucigalpa, Francisco Morazan","postalcode":"110011"},"personalInfo":{"job":"Software Engineer","business":"Patreon"},"userCode":1}]
+[
+  {
+    "name": "Jorge",
+    "lastname": "Varela",
+    "email": "jorgevarela@gmail.com",
+    "password": "5501f100661840c7e6e677629fe8d501e53d597a",
+    "typeAccount": "business",
+    "locationInfo": {
+      "country": "Honduras",
+      "region": "Tegucigalpa, Francisco Morazan",
+      "postalcode": "110011"
+    },
+    "personalInfo": { "job": "Software Engineer", "business": "Patreon" },
+    "userCode": 1
+  },
+  {
+    "name": "Juan",
+    "lastname": "Perez",
+    "email": "juanperez@gmail.com",
+    "password": "261876a66a573a1f6c319c26a53f5840beb282b7",
+    "typeAccount": "school",
+    "locationInfo": {
+      "country": "Honduras",
+      "region": "Ocotepeque,Ocotepeque",
+      "postalcode": "887741122"
+    },
+    "personalInfo": {
+      "university": "UNAH",
+      "degree": "Ingeniero en Sistemas",
+      "specialization": "Networking",
+      "initialdate": "2016-02",
+      "graduationDate": "2023-07"
+    },
+    "userCode": 2
+  }
+]

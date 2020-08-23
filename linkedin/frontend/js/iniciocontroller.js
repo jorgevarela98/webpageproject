@@ -123,6 +123,7 @@ function showInicioUserCard(){
     });
 }
 
+
 function savePost(){
     console.log(actualUserName);
     console.log(postId);
@@ -210,32 +211,34 @@ function generatePost(){
 function saveCommentary(idPost){
     console.log(idPost);
     
-            axios({
-                url:'../backend/api/posts.php',
-                method: 'get',
-                responseType: 'json'
-            }).then(res=>{
-                axios({
-                    url:'../backend/api/comentarios.php',
-                    method: 'post',
-                    responseType: 'json',
-                    data:{
-                        userCode:1,
-                        postCode:idPost,
-                        commentContent:document.getElementById('commentInput-'+(idPost)).value,
-                        commentCode:2
-                    }
-                }).then(res=>{
-                    console.log(res);
-                }).catch(error=>{
-                    console.error(error);
-                });
-            }).catch(error=>{
-                console.error(error);
-            });
+    axios({
+        url:'../backend/api/posts.php',
+        method: 'get',
+        responseType: 'json'
+    }).then(res=>{
+        axios({
+            url:'../backend/api/comentarios.php',
+            method: 'post',
+            responseType: 'json',
+            data:{
+                userCode:1,
+                postCode:idPost,
+                commentContent:document.getElementById('commentInput-'+(idPost)).value,
+                commentCode:2
+            }
+        }).then(res=>{
+            console.log(res);
+        }).catch(error=>{
+            console.error(error);
+        });
+    }).catch(error=>{
+        console.error(error);
+    });
        
 }
-
+function generateComments(){
+    
+}
 function main(){
     
     showInicioUserCard();

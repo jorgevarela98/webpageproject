@@ -181,7 +181,7 @@ function studentInfo(){
             method:'get',
             responseType: 'json',
         }).then(res=>{
-            alert(res.data.length+1);
+            
             axios({
                 url:'../backend/api/usuarios.php',
                 method:'post',
