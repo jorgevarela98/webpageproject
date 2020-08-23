@@ -1,4 +1,5 @@
 var actualUserName = '';
+var actualLastName = '';
 var postId =0;
 var userCode=1;
 var postContent='';
@@ -100,7 +101,7 @@ function showInicioUserCard(){
                                 </div>
                                 <div class="card-body card-body-dims flexes-cards">
                                     <div>
-                                        <p class="card-title" style="margin-bottom: 0 !important">${res.data.name} ${res.data.lastname}</p>
+                                        <p class="card-title" style="margin-bottom: 0 !important">${res.data.name}  ${res.data.lastname}</p>
                                     </div>
                                 </div>
                             </div>
@@ -159,6 +160,7 @@ function generatePost(){
         responseType: 'json'
     }).then(res=>{
         actualUserName = res.data.name;
+        actualLastName = res.data.lastname;
             axios({
                 url:'../backend/api/posts.php',
                 method: 'get',
@@ -167,7 +169,7 @@ function generatePost(){
             document.getElementById('postsInicio').innerHTML='';
             for(let i = 0 ; i<res.data.length; i++){
                 document.getElementById('postsInicio').innerHTML+=`
-                <div class="card post-dims">
+                <div class="card post-dims mb-3">
                     <div class="card-body">
                         <div class="card-header bg-transparent ">
                             <div class="row no-gutters flexes-cards" >
@@ -176,13 +178,21 @@ function generatePost(){
                                 </div>
                                 <div class="card-body card-body-dims flexes-cards">
                                     <div>
-                                        <p class="card-title" style="margin-bottom: 0 !important">${actualUserName}</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <p class="card-title" style="margin-bottom: 0 !important">${actualUserName} ${actualLastName}</p>
+                                        <p class="card-text"><small class="text-muted">Now</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <p class="card-text">${res.data[i].contentPost}</p>
+                        <hr>
+                        <p>Comentarios</p>
+                        <div id="commentary-section">
+                        </div>
+                        <div>
+                            <input class="" id="commentInput"  type="text"  placeholder="Comentar...">
+                            <button type="button" class="btn btn-primary" onclick="SaveCommentary(${i})">Commentar</button>
+                        </div>
                     </div>
                 </div>
                 `;

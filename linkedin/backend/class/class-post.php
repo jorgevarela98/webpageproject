@@ -8,7 +8,7 @@
         private $postCode;
         private $userCode;
         private $coments;
-
+        private $commentContent;
         public function __construct(
         ){
         }
@@ -63,7 +63,6 @@
                 }
                 echo json_encode($post);
         }
-
         /**
          * Get the value of postContent
          */ 
@@ -200,6 +199,26 @@
         public function setComents($coments)
         {
                 $this->coments = $coments;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of commentContent
+         */ 
+        public function getCommentContent()
+        {
+                return $this->commentContent;
+        }
+
+        /**
+         * Set the value of commentContent
+         *
+         * @return  self
+         */ 
+        public function setCommentContent($commentContent)
+        {
+                $this->commentContent = $commentContent;
 
                 return $this;
         }
